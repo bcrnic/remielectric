@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* REMIELECTRIC Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Electric Blue - Primary */
+    --primary: 224 76% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Electric Yellow - Accent */
+    --accent: 45 97% 65%;
+    --accent-foreground: 222 47% 11%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 224 76% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --electric-blue: 224 76% 40%;
+    --electric-blue-dark: 224 76% 30%;
+    --electric-blue-light: 224 60% 95%;
+    --electric-yellow: 45 97% 65%;
+    --electric-yellow-dark: 45 97% 50%;
+    --electric-gray: 210 15% 96%;
+    --electric-dark: 222 47% 11%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(224 76% 40%) 0%, hsl(224 76% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 97% 65%) 0%, hsl(45 97% 55%) 100%);
+    --gradient-overlay: linear-gradient(
+      180deg,
+      rgba(30, 64, 175, 0.9) 0%,
+      rgba(30, 58, 138, 0.95) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(224 76% 40% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(224 76% 40% / 0.1), 0 2px 4px -2px hsl(224 76% 40% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(224 76% 40% / 0.1), 0 4px 6px -4px hsl(224 76% 40% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(224 76% 40% / 0.1), 0 8px 10px -6px hsl(224 76% 40% / 0.1);
+    --shadow-yellow: 0 4px 14px 0 hsl(45 97% 65% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 224 76% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --accent: 45 97% 65%;
+    --accent-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 50%;
+
+    --electric-blue: 224 76% 50%;
+    --electric-blue-dark: 224 76% 40%;
+    --electric-blue-light: 224 40% 20%;
+    --electric-yellow: 45 97% 65%;
+    --electric-yellow-dark: 45 97% 55%;
+    --electric-gray: 222 47% 15%;
+    --electric-dark: 210 40% 98%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  .shadow-yellow {
+    box-shadow: var(--shadow-yellow);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--electric-yellow)) 0%,
+      hsl(var(--electric-yellow-dark)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--electric-blue-dark));
+}
