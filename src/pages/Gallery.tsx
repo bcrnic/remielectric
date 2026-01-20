@@ -8,7 +8,12 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 // Import gallery images
-const withBase = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
+const withBase = (p: string) => {
+  const base = import.meta.env.BASE_URL;
+  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
+  const normalizedPath = p.startsWith("/") ? p.slice(1) : p;
+  return `${normalizedBase}${normalizedPath}`;
+};
 const placeholderImage = (label: string) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(`
     <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">

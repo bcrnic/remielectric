@@ -1,13 +1,13 @@
 {
   "name": "REMIELECTRIC",
   "short_name": "REMIELECTRIC",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#0B1F4B",
   "theme_color": "#1E40AF",
   "icons": [
     {
-      "src": "/placeholder.svg",
+      "src": "placeholder.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
