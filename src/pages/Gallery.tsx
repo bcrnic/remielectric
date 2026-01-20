@@ -31,7 +31,7 @@ const galleryItems = [
     description: "Profesionalna ugradnja razvodne table",
   },
   {
-    src: placeholderImage("LED rasveta"),
+    src: "/gallery-led.jpg",
     title: "LED rasveta",
     description: "Moderna LED rasveta u stanu",
   },
@@ -51,7 +51,7 @@ const galleryItems = [
     description: "Dekorativna spoljna rasveta",
   },
   {
-    src: placeholderImage("Industrijski sistem"),
+    src: "/gallery-industrial.jpg",
     title: "Industrijski sistem",
     description: "Elektro ormar za poslovni objekat",
   },
