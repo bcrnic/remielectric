@@ -7,8 +7,8 @@
 @layer base {
   :root {
     /* REMIELECTRIC Brand Colors */
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -17,52 +17,52 @@
     --popover-foreground: 222 47% 11%;
 
     /* Deep Electric Blue - Primary */
-    --primary: 224 76% 40%;
+    --primary: 142 70% 45%;
     --primary-foreground: 0 0% 100%;
 
     /* Electric Yellow - Accent */
-    --accent: 45 97% 65%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 173 86% 20%;
+    --accent-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 210 15% 92%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 40%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 224 76% 40%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: 142 70% 45%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --electric-blue: 224 76% 40%;
-    --electric-blue-dark: 224 76% 30%;
-    --electric-blue-light: 224 60% 95%;
-    --electric-yellow: 45 97% 65%;
-    --electric-yellow-dark: 45 97% 50%;
-    --electric-gray: 210 15% 96%;
-    --electric-dark: 222 47% 11%;
+    --electric-blue: 142 70% 45%;
+    --electric-blue-dark: 173 86% 20%;
+    --electric-blue-light: 145 52% 93%;
+    --electric-yellow: 142 70% 45%;
+    --electric-yellow-dark: 142 70% 38%;
+    --electric-gray: 210 20% 98%;
+    --electric-dark: 215 28% 17%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(224 76% 40%) 0%, hsl(224 76% 30%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(45 97% 65%) 0%, hsl(45 97% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(173 86% 20%) 0%, hsl(142 70% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 70% 45%) 0%, hsl(142 70% 38%) 100%);
     --gradient-overlay: linear-gradient(
       180deg,
-      rgba(30, 64, 175, 0.9) 0%,
-      rgba(30, 58, 138, 0.95) 100%
+      rgba(7, 94, 84, 0.92) 0%,
+      rgba(18, 140, 126, 0.96) 100%
     );
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(224 76% 40% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(224 76% 40% / 0.1), 0 2px 4px -2px hsl(224 76% 40% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(224 76% 40% / 0.1), 0 4px 6px -4px hsl(224 76% 40% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(224 76% 40% / 0.1), 0 8px 10px -6px hsl(224 76% 40% / 0.1);
-    --shadow-yellow: 0 4px 14px 0 hsl(45 97% 65% / 0.4);
+    --shadow-sm: 0 1px 2px 0 hsl(142 70% 45% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(142 70% 45% / 0.1), 0 2px 4px -2px hsl(142 70% 45% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(142 70% 45% / 0.1), 0 4px 6px -4px hsl(142 70% 45% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(142 70% 45% / 0.1), 0 8px 10px -6px hsl(142 70% 45% / 0.1);
+    --shadow-yellow: 0 4px 14px 0 hsl(142 70% 45% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -75,7 +75,7 @@
   }
 
   .dark {
-    --background: 222 47% 8%;
+    --background: 173 86% 10%;
     --foreground: 210 40% 98%;
 
     --card: 222 47% 11%;
@@ -84,11 +84,11 @@
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 224 76% 50%;
+    --primary: 142 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --accent: 45 97% 65%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 173 86% 20%;
+    --accent-foreground: 0 0% 100%;
 
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
@@ -101,14 +101,14 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 224 76% 50%;
+    --ring: 142 70% 45%;
 
-    --electric-blue: 224 76% 50%;
-    --electric-blue-dark: 224 76% 40%;
-    --electric-blue-light: 224 40% 20%;
-    --electric-yellow: 45 97% 65%;
-    --electric-yellow-dark: 45 97% 55%;
-    --electric-gray: 222 47% 15%;
+    --electric-blue: 142 70% 45%;
+    --electric-blue-dark: 173 86% 20%;
+    --electric-blue-light: 173 40% 16%;
+    --electric-yellow: 142 70% 45%;
+    --electric-yellow-dark: 142 70% 38%;
+    --electric-gray: 173 30% 16%;
     --electric-dark: 210 40% 98%;
 
     --sidebar-background: 240 5.9% 10%;
