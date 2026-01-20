@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-const heroImage = "/pro_electrician.png";
+const heroImage = new URL("pro_electrician.png", import.meta.env.BASE_URL).toString();
 
 const HeroSection = () => {
   const benefits = ["Brza i pouzdana usluga", "Licencirani električari", "Garancija na sve radove"];

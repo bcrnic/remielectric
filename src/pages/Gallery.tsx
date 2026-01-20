@@ -8,6 +8,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 // Import gallery images
+const withBase = (p: string) => new URL(p.replace(/^\//, ""), import.meta.env.BASE_URL).toString();
 const placeholderImage = (label: string) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(`
     <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
@@ -26,32 +27,32 @@ const placeholderImage = (label: string) =>
 
 const galleryItems = [
   {
-    src: "/distribution_panel.png",
+    src: withBase("/distribution_panel.png"),
     title: "Razvodna tabla",
     description: "Profesionalna ugradnja razvodne table",
   },
   {
-    src: "/gallery-led.jpg",
+    src: withBase("/gallery-led.jpg"),
     title: "LED rasveta",
     description: "Moderna LED rasveta u stanu",
   },
   {
-    src: "/wall_sockets.png",
+    src: withBase("/wall_sockets.png"),
     title: "Uti\u010dnice i prekida\u010di",
     description: "Ugradnja modernih uti\u010dnica",
   },
   {
-    src: "/smart_home.png",
+    src: withBase("/smart_home.png"),
     title: "Smart home sistem",
     description: "Pametna kontrola osvetljenja",
   },
   {
-    src: "/outdoor_house.png",
+    src: withBase("/outdoor_house.png"),
     title: "Spoljna rasveta",
     description: "Dekorativna spoljna rasveta",
   },
   {
-    src: "/gallery-industrial.jpg",
+    src: withBase("/gallery-industrial.jpg"),
     title: "Industrijski sistem",
     description: "Elektro ormar za poslovni objekat",
   },
