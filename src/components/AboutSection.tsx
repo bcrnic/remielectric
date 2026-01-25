@@ -4,7 +4,7 @@ import { Shield, Clock, Award, Users } from "lucide-react";
 
 const stats = [
   { icon: Users, value: "100+", label: "Zadovoljnih klijenata" },
-  { icon: Award, value: "1+", label: "Godina iskustva" },
+  { icon: Award, value: "10+", label: "Godina iskustva" },
   { icon: Clock, value: "24h", label: "Brza reakcija" },
   { icon: Shield, value: "100%", label: "Garancija kvaliteta" },
 ];
