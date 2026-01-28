@@ -9,6 +9,12 @@ const CTASection = () => {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const viberNumber = "38163312579";
+  const viberMessage = encodeURIComponent(
+    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
+  );
+  const viberLink = `viber://pa?contact=${viberNumber}&text=${viberMessage}`;
+
   return (
     <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
@@ -37,6 +43,12 @@ const CTASection = () => {
               <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
+              </Button>
+            </a>
+            <a href={viberLink} target="_blank" rel="noopener noreferrer">
+              <Button variant="viber" size="xl" className="w-full sm:w-auto">
+                <MessageCircle className="w-5 h-5" />
+                Viber
               </Button>
             </a>
             <a href="tel:+38163312579">
