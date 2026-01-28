@@ -26,6 +26,12 @@ const Contact = () => {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const viberNumber = "38163312579";
+  const viberMessage = encodeURIComponent(
+    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
+  );
+  const viberLink = `viber://pa?contact=${viberNumber}&text=${viberMessage}`;
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -160,6 +166,17 @@ const Contact = () => {
                       <Button variant="whatsapp" size="lg" className="w-full">
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
+                      </Button>
+                    </a>
+                    <a
+                      href={viberLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button variant="viber" size="lg" className="w-full">
+                        <MessageCircle className="w-4 h-4" />
+                        Viber
                       </Button>
                     </a>
                   </div>
