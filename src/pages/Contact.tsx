@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -267,6 +268,7 @@ const Contact = () => {
 
         <Footer />
         <WhatsAppButton />
+        <ViberButton />
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import ServicesPreview from "@/components/ServicesPreview";
 import AboutSection from "@/components/AboutSection";
 import CTASection from "@/components/CTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ViberButton from "@/components/ViberButton";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
@@ -33,6 +34,7 @@ const Index = () => {
         </main>
         <Footer />
         <WhatsAppButton />
+        <ViberButton />
       </div>
     </>
   );
