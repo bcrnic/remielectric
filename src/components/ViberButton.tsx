@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 const ViberButton = () => {
   const viberNumber = "+38163312579";
   const viberMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge."
+    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
   );
   const viberLink = `viber://chat?number=${encodeURIComponent(viberNumber)}&text=${viberMessage}`;
   const fallback = "https://www.viber.com/";
@@ -19,7 +19,7 @@ const ViberButton = () => {
         window.open(fallback, "_blank", "noopener,noreferrer");
       }
     },
-    [viberLink]
+    [viberLink],
   );
 
   return (
