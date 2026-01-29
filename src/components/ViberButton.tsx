@@ -1,26 +1,26 @@
+import React, { useCallback } from "react";
 import { MessageCircle } from "lucide-react";
-import { useCallback } from "react";
 
 const ViberButton = () => {
   const viberNumber = "38163312579";
   const viberMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
+    "Zdravo! Zanima me zakazivanje termina za elektro usluge."
   );
-  // Viber deep link: viber://pa?contact=NUMBER&text=MESSAGE
   const viberLink = `viber://pa?contact=${viberNumber}&text=${viberMessage}`;
   const fallback = "https://www.viber.com/";
 
-  const openViber = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      // On mobile try the deep link. If the app is installed the OS should handle it.
-      window.location.href = viberLink;
-    } else {
-      // On desktop open Viber's website instead of attempting the custom scheme
-      window.open(fallback, "_blank", "noopener,noreferrer");
-    }
-  }, [viberLink]);
+  const openViber = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = viberLink;
+      } else {
+        window.open(fallback, "_blank", "noopener,noreferrer");
+      }
+    },
+    [viberLink]
+  );
 
   return (
     <a
