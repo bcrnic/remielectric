@@ -9,11 +9,11 @@ const CTASection = () => {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-  const viberNumber = "38163312579";
+  const viberNumber = "+38163312579";
   const viberMessage = encodeURIComponent(
     "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
   );
-  const viberLink = `viber://pa?contact=${viberNumber}&text=${viberMessage}`;
+  const viberLink = `viber://chat?number=${encodeURIComponent(viberNumber)}&text=${viberMessage}`;
 
   return (
     <section className="py-20 md:py-28 bg-primary relative overflow-hidden">

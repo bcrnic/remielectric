@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import { MessageCircle } from "lucide-react";
 
 const ViberButton = () => {
-  const viberNumber = "38163312579";
+  const viberNumber = "+38163312579";
   const viberMessage = encodeURIComponent(
     "Zdravo! Zanima me zakazivanje termina za elektro usluge."
   );
-  const viberLink = `viber://pa?contact=${viberNumber}&text=${viberMessage}`;
+  const viberLink = `viber://chat?number=${encodeURIComponent(viberNumber)}&text=${viberMessage}`;
   const fallback = "https://www.viber.com/";
 
   const openViber = useCallback(
@@ -24,7 +24,7 @@ const ViberButton = () => {
 
   return (
     <a
-      href={fallback}
+      href={viberLink}
       onClick={openViber}
       target="_blank"
       rel="noopener noreferrer"
