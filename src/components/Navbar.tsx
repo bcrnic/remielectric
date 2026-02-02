@@ -52,14 +52,14 @@ const Navbar = () => {
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">+38163 312 579</span>
+              <span className="text-sm font-medium">Daniel: +38163 312 579</span>
             </a>
             <a
               href="tel:+381606301113"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">060 630 1113 (Srdjan)</span>
+              <span className="text-sm font-medium">Srđan: +38160 630 1113</span>
             </a>
             <Link to="/zakazivanje">
               <Button variant="electric" size="lg">

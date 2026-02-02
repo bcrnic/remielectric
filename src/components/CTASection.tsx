@@ -30,13 +30,13 @@ const CTASection = () => {
             <a href="tel:+38163312579">
               <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5" />
-                Pozovite nas
+                Pozovite Daniela
               </Button>
             </a>
             <a href="tel:+381606301113">
               <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5" />
-                Pozovite Srdjana
+                Pozovite Srđana
               </Button>
             </a>
           </div>

@@ -60,7 +60,7 @@ const Footer = () => {
                   href="tel:+38163312579"
                   className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
                 >
-                  +38163 312 579
+                  Daniel: +38163 312 579
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -69,7 +69,7 @@ const Footer = () => {
                   href="tel:+381606301113"
                   className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
                 >
-                  060 630 1113 (Srdjan)
+                  Srđan: +38160 630 1113
                 </a>
               </li>
               <li className="flex items-center gap-3">
