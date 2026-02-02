@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -209,7 +207,7 @@ const Booking = () => {
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="+38163 312 579"
+                          placeholder="060 630 1113"
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
@@ -359,8 +357,6 @@ const Booking = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
-        <ViberButton />
       </div>
     </>
   );

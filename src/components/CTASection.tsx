@@ -1,20 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 const CTASection = () => {
-  const whatsappNumber = "38163312579";
-  const whatsappMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-  const viberNumber = "+38163312579";
-  const viberMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
-  );
-  const viberLink = `viber://chat?number=${encodeURIComponent(viberNumber)}&text=${viberMessage}`;
-
   return (
     <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
       {/* Decorative Elements */}
@@ -39,22 +27,16 @@ const CTASection = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </Button>
-            </a>
-            <a href={viberLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="viber" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                Viber
-              </Button>
-            </a>
             <a href="tel:+38163312579">
               <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5" />
                 Pozovite nas
+              </Button>
+            </a>
+            <a href="tel:+381606301113">
+              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
+                <Phone className="w-5 h-5" />
+                Pozovite Srdjana
               </Button>
             </a>
           </div>
