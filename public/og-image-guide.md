@@ -7,18 +7,21 @@ Open Graph slika je slika koja se prikazuje kada neko podeli vaš sajt na društ
 ## Trenutno stanje
 
 Trenutno se koristi placeholder slika:
+
 - `public/placeholder.svg` - generička slika
 - Referencirano u `index.html` i SEO komponentama
 
 ## Preporučene dimenzije
 
 ### Facebook / LinkedIn / WhatsApp
+
 - **Dimenzije:** 1200x630 px
 - **Format:** JPG ili PNG
 - **Veličina:** < 1MB
 - **Aspect ratio:** 1.91:1
 
 ### Twitter
+
 - **Dimenzije:** 1200x675 px (ili 1200x630)
 - **Format:** JPG, PNG, WEBP, GIF
 - **Veličina:** < 5MB
@@ -28,6 +31,7 @@ Trenutno se koristi placeholder slika:
 ### Opcija 1: Online alati (NAJLAKŠE)
 
 **Canva** (https://www.canva.com)
+
 1. Izaberite "Custom size" → 1200x630 px
 2. Koristite template ili kreirajte od nule
 3. Dodajte:
@@ -39,11 +43,13 @@ Trenutno se koristi placeholder slika:
 4. Export kao JPG (Quality: 100%)
 
 **Figma** (https://www.figma.com)
+
 1. New file → Frame → 1200x630
 2. Dizajnirajte sliku
 3. Export → JPG ili PNG
 
 **Adobe Express** (https://www.adobe.com/express)
+
 - Besplatni online alat
 - Slično Canva-i
 
@@ -59,6 +65,7 @@ Trenutno se koristi placeholder slika:
 ### Opcija 3: Koristi postojeću sliku
 
 Možete koristiti jednu od postojećih slika iz galerije:
+
 ```bash
 # Resize postojeće slike na 1200x630
 # Koristite online alat: https://www.iloveimg.com/resize-image
@@ -67,18 +74,20 @@ Možete koristiti jednu od postojećih slika iz galerije:
 ## Dizajn preporuke
 
 ### Šta uključiti:
+
 ✅ Logo REMIELECTRIC  
 ✅ Glavni slogan  
 ✅ Lokacija (Novi Sad)  
 ✅ Kontakt (telefon)  
 ✅ Vizuelni element (slika električara, elektro opreme)  
-✅ Brand boje (plava, žuta - iz Tailwind config-a)  
+✅ Brand boje (plava, žuta - iz Tailwind config-a)
 
 ### Šta izbegavati:
+
 ❌ Previše teksta  
 ❌ Sitna slova (neće biti čitljiva)  
 ❌ Generičke stock fotografije  
-❌ Niska rezolucija  
+❌ Niska rezolucija
 
 ## Primer strukture
 
@@ -99,9 +108,11 @@ Možete koristiti jednu od postojećih slika iz galerije:
 ## Implementacija
 
 ### Korak 1: Kreirajte sliku
+
 Koristite jedan od gore navedenih alata.
 
 ### Korak 2: Optimizujte sliku
+
 ```bash
 # Online: https://tinypng.com/
 # Ili lokalno sa sharp:
@@ -109,12 +120,14 @@ npm run optimize-images
 ```
 
 ### Korak 3: Dodajte u public folder
+
 ```bash
 # Preimenujte u:
 public/og-image.jpg
 ```
 
 ### Korak 4: Testiranje
+
 Testirajte kako izgleda na društvenim mrežama:
 
 **Facebook Debugger:**
@@ -129,6 +142,7 @@ https://www.linkedin.com/post-inspector/
 ## Trenutna implementacija
 
 OG slika je već referencirana u:
+
 - `index.html` (linija 27)
 - `src/components/SEO.tsx` (default vrednost)
 
@@ -146,6 +160,7 @@ public/og-image-kontakt.jpg  # Za /kontakt
 ```
 
 Zatim u SEO komponentama:
+
 ```tsx
 <SEO
   ogImage="https://remielectric.rs/og-image-usluge.jpg"

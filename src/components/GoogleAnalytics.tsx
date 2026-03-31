@@ -3,11 +3,7 @@ import { useLocation } from "react-router-dom";
 
 declare global {
   interface Window {
-    gtag?: (
-      command: string,
-      targetId: string,
-      config?: Record<string, unknown>
-    ) => void;
+    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void;
   }
 }
 

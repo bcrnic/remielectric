@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const ServicesPreview = () => {
   const { t } = useTranslation();
-  
+
   const services = [
     {
       icon: Home,
@@ -14,7 +14,7 @@ const ServicesPreview = () => {
       features: [
         t("services.list.0.features.0"),
         t("services.list.0.features.1"),
-        t("services.list.0.features.2")
+        t("services.list.0.features.2"),
       ],
     },
     {
@@ -24,7 +24,7 @@ const ServicesPreview = () => {
       features: [
         t("services.list.1.features.0"),
         t("services.list.1.features.1"),
-        t("services.list.1.features.2")
+        t("services.list.1.features.2"),
       ],
     },
     {
@@ -34,7 +34,7 @@ const ServicesPreview = () => {
       features: [
         t("services.list.2.features.0"),
         t("services.list.2.features.1"),
-        t("services.list.2.features.2")
+        t("services.list.2.features.2"),
       ],
     },
     {
@@ -44,7 +44,7 @@ const ServicesPreview = () => {
       features: [
         t("services.list.3.features.0"),
         t("services.list.3.features.1"),
-        t("services.list.3.features.2")
+        t("services.list.3.features.2"),
       ],
     },
   ];

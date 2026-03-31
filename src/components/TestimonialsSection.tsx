@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const TestimonialsSection = () => {
   const { t } = useTranslation();
-  
+
   const testimonials = [
     {
       name: t("testimonials.list.0.name"),
@@ -70,7 +70,10 @@ const TestimonialsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="relative overflow-hidden hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="relative overflow-hidden hover:shadow-lg transition-shadow"
+            >
               <CardContent className="p-6">
                 <Quote className="w-10 h-10 text-accent/20 mb-4" />
 
@@ -80,9 +83,7 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
 
-                <p className="text-foreground mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
-                </p>
+                <p className="text-foreground mb-6 leading-relaxed italic">"{testimonial.text}"</p>
 
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">{testimonial.name}</p>

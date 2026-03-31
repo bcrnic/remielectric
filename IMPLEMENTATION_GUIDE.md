@@ -21,22 +21,26 @@ npm install
 ```
 
 Ovo će instalirati:
+
 - `@supabase/supabase-js` - za backend integraciju
 - `sharp` - za optimizaciju slika (dev dependency)
 
 ### 2. Google Analytics setup
 
 **Korak 1:** Kreirajte Google Analytics nalog
+
 - Idite na https://analytics.google.com
 - Kreirajte novi property za remielectric.rs
 - Kopirajte Measurement ID (format: `G-XXXXXXXXXX`)
 
 **Korak 2:** Dodajte u `.env` fajl
+
 ```bash
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 **Korak 3:** Ažurirajte `index.html`
+
 - Zamenite `%VITE_GA_MEASUREMENT_ID%` sa pravim ID-jem ili
 - Koristite Vite plugin za automatsku zamenu
 
@@ -45,15 +49,18 @@ VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ### 3. Optimizacija slika
 
 **Korak 1:** Pokrenite script za optimizaciju
+
 ```bash
 npm run optimize-images
 ```
 
 **Korak 2:** Pregledajte rezultate
+
 - Script će kreirati `_optimized` verzije slika u `public/` folderu
 - Takođe će kreirati `.webp` verzije za sve slike
 
 **Korak 3:** Zamenite originalne fajlove
+
 ```bash
 # Windows PowerShell
 cd public
@@ -64,10 +71,12 @@ Get-ChildItem *_optimized.* | ForEach-Object {
 ```
 
 **Korak 4:** Obrišite stare fajlove
+
 - Obrišite sve originalne velike fajlove
 - Zadržite samo optimizovane verzije i WebP fajlove
 
 **Očekivani rezultat:**
+
 - Smanjenje ukupne veličine slika sa ~10MB na ~1.5-2MB
 - Brže učitavanje stranice
 - Bolji Google PageSpeed score
@@ -77,12 +86,14 @@ Get-ChildItem *_optimized.* | ForEach-Object {
 Pratite detaljan vodič u `SUPABASE_SETUP.md` fajlu.
 
 **Kratak pregled:**
+
 1. Kreirajte Supabase projekat
 2. Izvršite SQL za kreiranje tabela
 3. Kopirajte API ključeve u `.env`
 4. Ažurirajte `Booking.tsx` i `Contact.tsx` sa pravim API pozivima
 
 **Fajlovi za izmenu:**
+
 - `src/pages/Booking.tsx` (linija 79-80)
 - `src/pages/Contact.tsx` (linija 44-45)
 
@@ -91,11 +102,13 @@ Zamenite simulirani API call sa pravim Supabase pozivima (primeri u SUPABASE_SET
 ### 5. Provera novih sekcija
 
 **Testimonials sekcija:**
+
 - Automatski dodata na početnu stranicu (`/`)
 - Prikazuje 6 recenzija klijenata
 - Možete ažurirati recenzije u `src/components/TestimonialsSection.tsx`
 
 **FAQ sekcija:**
+
 - Automatski dodata na početnu stranicu (`/`)
 - Sadrži 12 često postavljanih pitanja
 - Možete dodati/izmeniti pitanja u `src/components/FAQSection.tsx`
@@ -164,6 +177,7 @@ npm run dev
 ```
 
 Proverite:
+
 - ✅ Testimonials sekcija se prikazuje na početnoj
 - ✅ FAQ sekcija se prikazuje na početnoj
 - ✅ Google Analytics tracking (otvorite browser DevTools → Network → filter "gtag")
@@ -181,16 +195,19 @@ npm run preview
 ## 📊 Očekivani rezultati
 
 ### Performance unapređenja:
+
 - **Smanjenje veličine slika:** ~80% (10MB → 2MB)
 - **Brže učitavanje:** ~40-50% brže
 - **Google PageSpeed Score:** +15-20 poena
 
 ### SEO unapređenja:
+
 - **FAQ sekcija:** Bolje rangiranje za long-tail keywords
 - **Testimonials:** Povećano poverenje i CTR
 - **Structured data:** Već implementirano (Schema.org)
 
 ### User Experience:
+
 - **Testimonials:** Povećano poverenje (+30% konverzija)
 - **FAQ:** Smanjenje broja telefonskih upita (~20%)
 - **Brže učitavanje:** Manji bounce rate
@@ -200,19 +217,25 @@ npm run preview
 ## 🔧 Troubleshooting
 
 ### Problem: Google Analytics ne radi
-**Rešenje:** 
+
+**Rešenje:**
+
 1. Proverite da li je `VITE_GA_MEASUREMENT_ID` pravilno postavljen
 2. Otvorite DevTools → Console i proverite greške
 3. Proverite da li je `gtag` funkcija dostupna: `typeof window.gtag`
 
 ### Problem: Slike se ne optimizuju
+
 **Rešenje:**
+
 1. Proverite da li je `sharp` instaliran: `npm list sharp`
 2. Pokrenite ponovo: `npm run optimize-images`
 3. Proverite da li fajlovi postoje u `public/` folderu
 
 ### Problem: Supabase greške
+
 **Rešenje:**
+
 1. Proverite `.env` fajl i API ključeve
 2. Proverite RLS policies u Supabase dashboard
 3. Pogledajte browser console za detaljne greške

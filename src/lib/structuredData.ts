@@ -55,10 +55,7 @@ export const organizationSchema = {
   ],
   image: "https://remielectric.rs/og-image.jpg",
   logo: "https://remielectric.rs/logo.png",
-  sameAs: [
-    "https://www.facebook.com/remielectric",
-    "https://www.instagram.com/remielectric",
-  ],
+  sameAs: ["https://www.facebook.com/remielectric", "https://www.instagram.com/remielectric"],
 };
 
 export const localBusinessSchema = {
@@ -154,7 +151,7 @@ export const reviewSchema = (
     rating: number;
     text: string;
     date: string;
-  }[]
+  }[],
 ) => ({
   "@context": "https://schema.org",
   "@type": "Organization",

@@ -140,7 +140,7 @@ const Services = () => {
       breadcrumbs,
       serviceSchema(
         "Elektro instalacije",
-        "Kompletne elektro instalacije za stambene i poslovne objekte u Novom Sadu"
+        "Kompletne elektro instalacije za stambene i poslovne objekte u Novom Sadu",
       ),
     ],
   };

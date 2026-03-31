@@ -3,6 +3,7 @@
 ## ✅ Kompletno implementirano
 
 ### Komponente sa prevodima:
+
 1. **Navbar** ✅
    - Navigacioni linkovi
    - Booking dugme
@@ -37,6 +38,7 @@
 ## 🔄 Delimično implementirano
 
 ### Komponente koje koriste statičke podatke:
+
 - **ServicesPreview** - Lista usluga (hardcoded)
 - **TestimonialsSection** - Recenzije (hardcoded)
 - **FAQSection** - Pitanja i odgovori (hardcoded)
@@ -47,6 +49,7 @@
 ## ⏳ Potrebno implementirati
 
 ### Stranice:
+
 1. **Footer** - Kompletna implementacija
 2. **Gallery** - Naslovi i CTA
 3. **Services** - Kompletna stranica

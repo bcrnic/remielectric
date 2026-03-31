@@ -3,22 +3,26 @@
 ## ✅ Šta je implementirano
 
 ### 1. **Sitemap.xml**
+
 - Generator script: `scripts/generate-sitemap.js`
 - Komanda: `npm run generate-sitemap`
 - Sve stranice uključene sa prioritetima
 
 ### 2. **Robots.txt**
+
 - Optimizovan za Google, Bing, Social Media
 - Sitemap referenca dodata
 - Crawl delay konfigurisan
 
 ### 3. **SEO Komponenta**
+
 - `src/components/SEO.tsx`
 - Centralizovano upravljanje meta tagovima
 - Open Graph i Twitter Cards
 - Geo tags za lokalnu pretragu
 
 ### 4. **Structured Data (Schema.org)**
+
 - `src/lib/structuredData.ts`
 - Organization schema
 - LocalBusiness schema
@@ -28,7 +32,9 @@
 - Review schema
 
 ### 5. **Meta Tags**
+
 Sve stranice optimizovane:
+
 - ✅ Početna (/)
 - ✅ Usluge (/usluge)
 - ✅ Galerija (/galerija)
@@ -40,7 +46,9 @@ Sve stranice optimizovane:
 ## 🚀 Sledeći koraci
 
 ### Obavezno:
+
 1. **Generisati sitemap**
+
    ```bash
    npm run generate-sitemap
    ```
@@ -56,6 +64,7 @@ Sve stranice optimizovane:
    - Verifikovati ownership
 
 ### Opciono:
+
 4. **Google My Business**
    - Kreirati profil
    - Dodati slike i radno vreme
@@ -70,15 +79,18 @@ Sve stranice optimizovane:
 ## 📊 Očekivani rezultati
 
 **1-3 meseca:**
+
 - Indexing u Google-u
 - Pojava u lokalnim rezultatima
 - Rangiranje za "REMIELECTRIC"
 
 **3-6 meseci:**
+
 - Top 10 za "električar Novi Sad"
 - 50-100% povećanje traffic-a
 
 **6-12 meseci:**
+
 - Top 3 za glavne ključne reči
 - 200-300% povećanje traffic-a
 

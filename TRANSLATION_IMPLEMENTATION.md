@@ -3,6 +3,7 @@
 ## ✅ Kompletno implementirano
 
 ### 1. Translation fajlovi
+
 **Lokacija:** `src/i18n/locales/`
 
 - ✅ **sr.json** - Srpski (kompletno)
@@ -10,6 +11,7 @@
 - ✅ **ru.json** - Русский (kompletno)
 
 **Pokriveni ključevi:**
+
 - `nav.*` - Navigacija
 - `hero.*` - Hero sekcija
 - `services.*` - Usluge
@@ -26,6 +28,7 @@
 ### 2. Komponente sa prevodima
 
 #### ✅ Layout komponente:
+
 1. **Navbar** - Kompletno
    - Navigacioni linkovi
    - Booking dugme
@@ -40,6 +43,7 @@
    - Copyright
 
 #### ✅ Home page komponente:
+
 3. **HeroSection** - Kompletno
    - Naslov i podnaslov
    - CTA dugmad
@@ -65,6 +69,7 @@
    - CTA dugme
 
 #### ✅ Stranice:
+
 9. **Gallery** - Kompletno
    - Hero sekcija
    - CTA sekcija
@@ -107,16 +112,18 @@
 **Preostalo:** ~15%
 
 ### Šta radi:
+
 ✅ Promena jezika u navigaciji  
 ✅ Svi naslovi i podnaslovi prevedeni  
 ✅ CTA dugmad prevedena  
 ✅ Footer kompletno preveden  
-✅ Gallery stranica kompletno prevedena  
+✅ Gallery stranica kompletno prevedena
 
 ### Šta još treba:
+
 ⏳ Services stranica  
 ⏳ Contact stranica  
-⏳ Booking stranica  
+⏳ Booking stranica
 
 ## 🚀 Kako testirati
 
@@ -129,17 +136,20 @@ http://localhost:8080
 ```
 
 **Testiranje:**
+
 1. Klikni na Globe ikonu u navigaciji
 2. Izaberi jezik (🇷🇸 SR / 🇬🇧 EN / 🇷🇺 RU)
 3. Proveri da li se svi tekstovi menjaju
 
 **Trenutno radi na:**
+
 - Početna stranica (/)
 - Galerija (/galerija)
 - Navigacija (sve stranice)
 - Footer (sve stranice)
 
 **Još ne radi na:**
+
 - Services stranica (/usluge)
 - Contact stranica (/kontakt)
 - Booking stranica (/zakazivanje)

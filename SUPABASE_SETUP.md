@@ -116,40 +116,41 @@ npm install @supabase/supabase-js
 Fajlovi koji treba da se kreiraju/izmene:
 
 ### `src/lib/supabase.ts`
-```typescript
-import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+```typescript
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
+  throw new Error("Missing Supabase environment variables");
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Types
 export interface Booking {
-  id?: string
-  created_at?: string
-  name: string
-  phone: string
-  email?: string
-  service: string
-  date: string
-  time_slot: string
-  description?: string
-  status?: 'pending' | 'confirmed' | 'completed' | 'cancelled'
+  id?: string;
+  created_at?: string;
+  name: string;
+  phone: string;
+  email?: string;
+  service: string;
+  date: string;
+  time_slot: string;
+  description?: string;
+  status?: "pending" | "confirmed" | "completed" | "cancelled";
 }
 
 export interface ContactMessage {
-  id?: string
-  created_at?: string
-  name: string
-  email: string
-  phone?: string
-  message: string
-  status?: 'new' | 'read' | 'replied'
+  id?: string;
+  created_at?: string;
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  status?: "new" | "read" | "replied";
 }
 ```
 
@@ -158,23 +159,23 @@ export interface ContactMessage {
 Zameniti simulirani API call (linija 79-80) sa:
 
 ```typescript
-import { supabase } from '@/lib/supabase'
+import { supabase } from "@/lib/supabase";
 
 // U handleSubmit funkciji:
-const { error } = await supabase.from('bookings').insert({
+const { error } = await supabase.from("bookings").insert({
   name: formData.name,
   phone: formData.phone,
   email: formData.email || null,
   service: formData.service,
-  date: format(date, 'yyyy-MM-dd'),
+  date: format(date, "yyyy-MM-dd"),
   time_slot: formData.timeSlot,
   description: formData.description || null,
-})
+});
 
 if (error) {
-  toast.error('Greška pri zakazivanju. Pokušajte ponovo.')
-  console.error('Supabase error:', error)
-  return
+  toast.error("Greška pri zakazivanju. Pokušajte ponovo.");
+  console.error("Supabase error:", error);
+  return;
 }
 ```
 
@@ -183,20 +184,20 @@ if (error) {
 Zameniti simulirani API call (linija 44-45) sa:
 
 ```typescript
-import { supabase } from '@/lib/supabase'
+import { supabase } from "@/lib/supabase";
 
 // U handleSubmit funkciji:
-const { error } = await supabase.from('contact_messages').insert({
+const { error } = await supabase.from("contact_messages").insert({
   name: formData.name,
   email: formData.email,
   phone: formData.phone || null,
   message: formData.message,
-})
+});
 
 if (error) {
-  toast.error('Greška pri slanju poruke. Pokušajte ponovo.')
-  console.error('Supabase error:', error)
-  return
+  toast.error("Greška pri slanju poruke. Pokušajte ponovo.");
+  console.error("Supabase error:", error);
+  return;
 }
 ```
 
@@ -213,25 +214,25 @@ Možete kreirati admin stranicu za pregled rezervacija:
 
 ```typescript
 // src/pages/Admin.tsx
-import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 const Admin = () => {
-  const [bookings, setBookings] = useState([])
-  
+  const [bookings, setBookings] = useState([]);
+
   useEffect(() => {
     const fetchBookings = async () => {
       const { data } = await supabase
-        .from('bookings')
-        .select('*')
-        .order('created_at', { ascending: false })
-      setBookings(data || [])
-    }
-    fetchBookings()
-  }, [])
-  
+        .from("bookings")
+        .select("*")
+        .order("created_at", { ascending: false });
+      setBookings(data || []);
+    };
+    fetchBookings();
+  }, []);
+
   // Render tabelu sa rezervacijama
-}
+};
 ```
 
 ## Napomene
@@ -244,10 +245,13 @@ const Admin = () => {
 ## Troubleshooting
 
 **Problem:** "Missing Supabase environment variables"
+
 - **Rešenje:** Proverite da li `.env` fajl postoji i da li su promenljive pravilno nazvane
 
 **Problem:** "Row Level Security policy violation"
+
 - **Rešenje:** Proverite da li su RLS policies pravilno postavljene u SQL editoru
 
 **Problem:** Podaci se ne pojavljuju u bazi
+
 - **Rešenje:** Otvorite browser console i proverite error poruke

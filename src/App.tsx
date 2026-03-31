@@ -27,17 +27,17 @@ const App = () => (
             <Toaster />
             <Sonner />
             <BrowserRouter basename={import.meta.env.PROD ? "/remielectric" : undefined}>
-          <GoogleAnalytics />
-          <BackToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/usluge" element={<Services />} />
-            <Route path="/zakazivanje" element={<Booking />} />
-            <Route path="/kontakt" element={<Contact />} />
-            <Route path="/galerija" element={<Gallery />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <GoogleAnalytics />
+              <BackToTop />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/usluge" element={<Services />} />
+                <Route path="/zakazivanje" element={<Booking />} />
+                <Route path="/kontakt" element={<Contact />} />
+                <Route path="/galerija" element={<Gallery />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </BrowserRouter>
           </TooltipProvider>
         </QueryClientProvider>

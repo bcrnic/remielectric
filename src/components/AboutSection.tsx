@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
   const { t } = useTranslation();
-  
+
   const stats = [
     { icon: Users, value: t("about.stats.0.value"), label: t("about.stats.0.label") },
     { icon: Award, value: t("about.stats.1.value"), label: t("about.stats.1.label") },
@@ -26,9 +26,7 @@ const AboutSection = () => {
               {t("about.subtitle")}
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                {t("about.description")}
-              </p>
+              <p>{t("about.description")}</p>
             </div>
 
             {/* Contact Info */}

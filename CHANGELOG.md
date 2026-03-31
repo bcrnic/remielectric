@@ -5,6 +5,7 @@
 ### ✨ Dodato
 
 #### 1. Google Analytics Tracking
+
 - **Fajlovi:**
   - `src/components/GoogleAnalytics.tsx` - komponenta za tracking
   - `index.html` - Google Analytics script
@@ -17,6 +18,7 @@
   - Podrška za environment variables
 
 #### 2. Testimonials Sekcija
+
 - **Fajlovi:**
   - `src/components/TestimonialsSection.tsx` - nova komponenta
   - `src/pages/Index.tsx` - dodata na početnu stranicu
@@ -28,6 +30,7 @@
   - Responsive grid layout (1/2/3 kolone)
 
 #### 3. FAQ Sekcija
+
 - **Fajlovi:**
   - `src/components/FAQSection.tsx` - nova komponenta
   - `src/pages/Index.tsx` - dodata na početnu stranicu
@@ -39,6 +42,7 @@
   - SEO optimizovano
 
 #### 4. Optimizacija Slika
+
 - **Fajlovi:**
   - `scripts/optimize-images.js` - Node.js script
   - `OPTIMIZATION_GUIDE.md` - detaljan vodič
@@ -51,6 +55,7 @@
   - Reporting uštede prostora
 
 #### 5. Supabase Backend Priprema
+
 - **Fajlovi:**
   - `src/lib/supabase.ts` - Supabase klijent i TypeScript tipovi
   - `SUPABASE_SETUP.md` - kompletan setup vodič
@@ -64,6 +69,7 @@
   - Email notifikacije (dokumentovano)
 
 #### 6. Komponente i Utilities
+
 - **Fajlovi:**
   - `src/components/OptimizedImage.tsx` - komponenta za lazy loading
   - `.gitignore` - ažurirano za `.env` fajlove
@@ -71,11 +77,13 @@
 ### 📦 Dependencies
 
 #### Dodato u `dependencies`:
+
 ```json
 "@supabase/supabase-js": "^2.45.4"
 ```
 
 #### Dodato u `devDependencies`:
+
 ```json
 "sharp": "^0.33.5"
 ```
@@ -83,6 +91,7 @@
 ### 📝 Dokumentacija
 
 Kreirani novi dokumenti:
+
 - `IMPLEMENTATION_GUIDE.md` - glavni vodič za implementaciju
 - `SUPABASE_SETUP.md` - Supabase setup korak-po-korak
 - `OPTIMIZATION_GUIDE.md` - vodič za optimizaciju slika
@@ -93,7 +102,9 @@ Kreirani novi dokumenti:
 ### 🔧 Konfiguracija
 
 #### Environment Variables
+
 Dodati novi environment variables:
+
 ```bash
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 VITE_SUPABASE_URL=https://your-project.supabase.co
@@ -101,7 +112,9 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
 #### Scripts
+
 Dodati novi npm scripts:
+
 ```json
 "optimize-images": "node scripts/optimize-images.js"
 ```

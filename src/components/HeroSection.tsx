@@ -8,11 +8,11 @@ const heroImage = `${base.endsWith("/") ? base : `${base}/`}pro_electrician.png`
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  
+
   const benefits = [
     t("hero.benefits.fast"),
     t("hero.benefits.professional"),
-    t("hero.benefits.warranty")
+    t("hero.benefits.warranty"),
   ];
 
   return (

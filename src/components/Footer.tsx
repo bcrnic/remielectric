@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { t } = useTranslation();
-  
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -90,15 +90,9 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-semibold text-lg mb-4">{t("footer.workingHours")}</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>
-                {t("footer.workingDays")}
-              </li>
-              <li>
-                {t("footer.saturday")}
-              </li>
-              <li>
-                {t("footer.sunday")}
-              </li>
+              <li>{t("footer.workingDays")}</li>
+              <li>{t("footer.saturday")}</li>
+              <li>{t("footer.sunday")}</li>
             </ul>
           </div>
         </div>
