@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Loader2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
@@ -18,18 +18,6 @@ const Contact = () => {
     phone: "",
     message: "",
   });
-
-  const whatsappNumber = "38163312579";
-  const whatsappMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-  const viberNumber = "+38163312579";
-  const viberMessage = encodeURIComponent(
-    "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
-  );
-  const viberLink = `viber://chat?number=${encodeURIComponent(viberNumber)}&text=${viberMessage}`;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -121,8 +109,16 @@ const Contact = () => {
                           href="tel:+38163312579"
                           className="text-primary hover:text-electric-blue-dark transition-colors font-medium"
                         >
-                          +38163 312 579
+                          Daniel: +38163 312 579
                         </a>
+                        <div className="mt-1">
+                          <a
+                            href="tel:+381606301113"
+                            className="text-primary hover:text-electric-blue-dark transition-colors font-medium"
+                          >
+                            Srđan: +38160 630 1113
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -163,29 +159,13 @@ const Contact = () => {
                     <a href="tel:+38163312579" className="flex-1">
                       <Button variant="default" size="lg" className="w-full">
                         <Phone className="w-4 h-4" />
-                        Pozovite nas
+                        Pozovite Daniela
                       </Button>
                     </a>
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button variant="whatsapp" size="lg" className="w-full">
-                        <MessageCircle className="w-4 h-4" />
-                        WhatsApp
-                      </Button>
-                    </a>
-                    <a
-                      href={viberLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
-                    >
-                      <Button variant="viber" size="lg" className="w-full">
-                        <MessageCircle className="w-4 h-4" />
-                        Viber
+                    <a href="tel:+381606301113" className="flex-1">
+                      <Button variant="default" size="lg" className="w-full">
+                        <Phone className="w-4 h-4" />
+                        Pozovite Srđana
                       </Button>
                     </a>
                   </div>
@@ -229,7 +209,7 @@ const Contact = () => {
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="+38163 312 579"
+                          placeholder="+38160 630 1113"
                           value={formData.phone}
                           onChange={handleInputChange}
                         />

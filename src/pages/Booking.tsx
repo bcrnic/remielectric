@@ -215,7 +215,7 @@ const Booking = () => {
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="+38163 312 579"
+                          placeholder="Daniel: +38163 312 579 / Srđan: +38160 630 1113"
                           value={formData.phone}
                           onChange={handleInputChange}
                           required

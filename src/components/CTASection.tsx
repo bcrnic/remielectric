@@ -40,22 +40,16 @@ const CTASection = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="whatsapp" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </Button>
-            </a>
-            <a href={viberLink} target="_blank" rel="noopener noreferrer">
-              <Button variant="viber" size="xl" className="w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                Viber
-              </Button>
-            </a>
             <a href="tel:+38163312579">
               <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
                 <Phone className="w-5 h-5" />
-                Pozovite nas
+                Pozovite Daniela
+              </Button>
+            </a>
+            <a href="tel:+381606301113">
+              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
+                <Phone className="w-5 h-5" />
+                Pozovite Srđana
               </Button>
             </a>
           </div>
