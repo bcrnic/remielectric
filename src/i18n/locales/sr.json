@@ -10,6 +10,8 @@
     "title": "Profesionalne elektro instalacije u Novom Sadu",
     "subtitle": "Brzo, kvalitetno i pouzdano. Vaš partner za sve elektro potrebe.",
     "cta": "Zakaži besplatan pregled",
+    "badge": "Aktivni od 2023 · Novi Sad",
+    "imageAlt": "Električar na poslu",
     "benefits": {
       "fast": "Brza i pouzdana usluga",
       "professional": "Profesionalni električari",
@@ -45,6 +47,26 @@
         "title": "LED rasveta",
         "description": "Ugradnja energetski efikasne LED rasvete i pametnih sistema osvetljenja.",
         "features": ["Unutrašnja rasveta", "Spoljna rasveta", "Smart osvetljenje"]
+      },
+      {
+        "title": "Ugradnja utičnica i prekidača",
+        "description": "Profesionalna ugradnja i zamena utičnica, prekidača i senzora pokreta.",
+        "features": ["Obične i šuko utičnice", "USB utičnice", "Prekidači i regulatori", "Senzori pokreta", "Tajmeri"]
+      },
+      {
+        "title": "Zaštita od prenapona",
+        "description": "Ugradnja zaštitnih uređaja za sigurnost vaše elektro opreme i aparata.",
+        "features": ["Prenaponska zaštita", "Diferencijalna zaštita", "FID sklopke", "Uzemljenje", "Kontrola instalacija"]
+      },
+      {
+        "title": "Električni grejači",
+        "description": "Ugradnja i povezivanje električnih grejnih sistema za komforan dom.",
+        "features": ["Podno grejanje", "Električni radijatori", "IR paneli", "Termostatska regulacija", "Energetski efikasni sistemi"]
+      },
+      {
+        "title": "Smart home sistemi",
+        "description": "Integracija pametnih sistema za kontrolu osvetljenja, grejanja i sigurnosti.",
+        "features": ["Pametne utičnice", "Daljinska kontrola", "Automatizacija osvetljenja", "Integracija sa mobilnim", "Glasovna kontrola"]
       }
     ]
   },
@@ -52,6 +74,7 @@
     "title": "O nama",
     "subtitle": "REMIELECTRIC - Vaš pouzdan partner",
     "description": "Sa dugogodišnjim iskustvom u oblasti elektro instalacija, pružamo profesionalne usluge za stambene i poslovne objekte. Naš tim stručnjaka je tu da reši sve vaše elektro potrebe brzo i efikasno.",
+    "description2": "Ponosimo se pedantnim pristupom, poštovanjem rokova i primenom najsavremenijih standarda zaštite. Bilo da se radi o jednostavnoj zameni utičnice, ili o postavljanju kompletne instalacije, svaki posao obavljamo sa istom dozom posvećenosti.",
     "stats": [
       { "value": "100+", "label": "Zadovoljnih klijenata" },
       { "value": "10+", "label": "Godina iskustva" },
@@ -121,10 +144,7 @@
         "question": "Koje oblasti pokrivate?",
         "answer": "Pokrivamo Novi Sad i okolinu (Petrovaradin, Sremska Kamenica, Futog, Veternik). Za udaljenije lokacije, kontaktirajte nas za dogovor."
       },
-      {
-        "question": "Da li radite hitne intervencije?",
-        "answer": "Da, dostupni smo 7 dana u nedelji za hitne slučajeve. U slučaju kratkog spoja, nestanka struje ili drugih hitnih problema, pozovite nas na +38163 312 579."
-      },
+
       {
         "question": "Koliko košta procena?",
         "answer": "Procena je potpuno besplatna i bez obaveza. Dolazimo na licu mesta, pregledamo situaciju i dajemo vam tačnu cenu pre početka radova."
@@ -133,10 +153,7 @@
         "question": "Koliko traje ugradnja elektro instalacija?",
         "answer": "Zavisi od obima posla. Manje intervencije (zamena utičnica, prekidača) traju 1-2 sata. Kompletne instalacije za stan mogu trajati 3-7 dana, zavisno od kvadrature."
       },
-      {
-        "question": "Da li nudite garanciju na radove?",
-        "answer": "Da, nudimo garanciju na sve izvedene radove. Garancija na instalacije je 2 godine, a na ugrađenu opremu prema specifikaciji proizvođača."
-      },
+
       {
         "question": "Koja je cena ugradnje razvodne table?",
         "answer": "Cena zavisi od veličine objekta i broja osigurača. Okvirna cena za stan od 50-70m² je 15.000-25.000 RSD sa materijalom. Tačnu cenu dajemo nakon pregleda."
@@ -178,7 +195,10 @@
       "send": "Pošalji poruku",
       "sending": "Šaljem...",
       "success": "Poruka uspešno poslata!",
-      "error": "Greška pri slanju poruke"
+      "error": "Greška pri slanju poruke",
+      "callDaniel": "Pozovite Daniela",
+      "callSrdjan": "Pozovite Srđana",
+      "mapTitle": "REMIELECTRIC lokacija"
     }
   },
   "booking": {
@@ -188,6 +208,7 @@
     "service": "Usluga",
     "serviceType": "Vrsta usluge",
     "selectService": "Izaberite uslugu",
+    "other": "Drugo",
     "description": "Opis problema / projekta",
     "descriptionPlaceholder": "Opišite ukratko šta vam treba...",
     "dateTime": "Datum i vreme",
@@ -221,5 +242,35 @@
     "date": "Datum",
     "time": "Termin",
     "required": "obavezno"
+  },
+  "theme": {
+    "toggle": "Promeni temu",
+    "light": "Svetla",
+    "dark": "Tamna",
+    "system": "Sistem"
+  },
+  "seo": {
+    "home": {
+      "title": "REMIELECTRIC - Električar Novi Sad | Elektro Instalacije",
+      "description": "REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!"
+    },
+    "services": {
+      "title": "Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad",
+      "description": "Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno."
+    },
+    "contact": {
+      "title": "Kontakt - REMIELECTRIC | Električar Novi Sad",
+      "description": "Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan."
+    },
+    "booking": {
+      "title": "Zakaži Termin - REMIELECTRIC | Električar Novi Sad",
+      "description": "Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online.",
+      "successTitle": "Termin Zakazan - REMIELECTRIC",
+      "successDesc": "Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro."
+    },
+    "gallery": {
+      "title": "Galerija Radova - REMIELECTRIC | Električar Novi Sad",
+      "description": "Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više."
+    }
   }
 }

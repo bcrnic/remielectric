@@ -31,41 +31,28 @@ const placeholderImage = (label: string) =>
     </svg>
   `)}`;
 
-const galleryItems = [
-  {
-    src: withBase("/distribution_panel.png"),
-    title: "Razvodna tabla",
-    description: "Profesionalna ugradnja razvodne table",
-  },
-  {
-    src: withBase("/gallery-led.jpg"),
-    title: "LED rasveta",
-    description: "Moderna LED rasveta u stanu",
-  },
-  {
-    src: withBase("/wall_sockets.png"),
-    title: "Uti\u010dnice i prekida\u010di",
-    description: "Ugradnja modernih uti\u010dnica",
-  },
-  {
-    src: withBase("/smart_home.png"),
-    title: "Smart home sistem",
-    description: "Pametna kontrola osvetljenja",
-  },
-  {
-    src: withBase("/outdoor_house.png"),
-    title: "Spoljna rasveta",
-    description: "Dekorativna spoljna rasveta",
-  },
-  {
-    src: withBase("/gallery-industrial.jpg"),
-    title: "Industrijski sistem",
-    description: "Elektro ormar za poslovni objekat",
-  },
+const galleryImages = [
+  withBase("/distribution_panel.png"),
+  withBase("/gallery-led.jpg"),
+  withBase("/wall_sockets.png"),
+  withBase("/smart_home.png"),
+  withBase("/outdoor_house.png"),
+  withBase("/gallery-industrial.jpg"),
 ];
 
 const Gallery = () => {
   const { t } = useTranslation();
+  
+  // Fallback to existing items if not in i18n
+  const galleryItems = t("gallery.items", { returnObjects: true, defaultValue: [
+  { title: "Razvodna tabla", description: "Profesionalna ugradnja razvodne table" },
+  { title: "LED rasveta", description: "Moderna LED rasveta u stanu" },
+  { title: "Utičnice i prekidači", description: "Ugradnja modernih utičnica" },
+  { title: "Smart home sistem", description: "Pametna kontrola osvetljenja" },
+  { title: "Spoljna rasveta", description: "Dekorativna spoljna rasveta" },
+  { title: "Industrijski sistem", description: "Elektro ormar za poslovni objekat" },
+  ] }) as Array<{ title: string; description: string }>;
+
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -91,15 +78,15 @@ const Gallery = () => {
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: "Početna", url: "https://remielectric.rs" },
-    { name: "Galerija", url: "https://remielectric.rs/galerija" },
+    { name: t("nav.home"), url: "https://remielectric.rs" },
+    { name: t("nav.gallery"), url: "https://remielectric.rs/galerija" },
   ]);
 
   return (
     <>
       <SEO
-        title="Galerija Radova - REMIELECTRIC | Električar Novi Sad"
-        description="Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više."
+        title={t("seo.gallery.title", "Galerija Radova - REMIELECTRIC | Električar Novi Sad")}
+        description={t("seo.gallery.description", "Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više.")}
         keywords="galerija radova, elektro instalacije galerija, LED rasveta primeri, završeni projekti Novi Sad"
         canonical="https://remielectric.rs/galerija"
         structuredData={breadcrumbs}
@@ -132,7 +119,7 @@ const Gallery = () => {
                     onClick={() => openLightbox(index)}
                   >
                     <img
-                      src={item.src}
+                      src={galleryImages[index]}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -206,7 +193,7 @@ const Gallery = () => {
             {/* Image */}
             <div className="max-w-4xl max-h-[80vh] p-4" onClick={(e) => e.stopPropagation()}>
               <img
-                src={galleryItems[selectedImage].src}
+                src={galleryImages[selectedImage]}
                 alt={galleryItems[selectedImage].title}
                 className="max-w-full max-h-[70vh] object-contain rounded-lg"
               />

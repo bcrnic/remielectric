@@ -19,20 +19,9 @@ import { format } from "date-fns";
 import { sr } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema } from "@/lib/structuredData";
-
-const serviceTypes = [
-  "Kućne elektro instalacije",
-  "Poslovni objekti",
-  "Održavanje i popravke",
-  "LED rasveta",
-  "Ugradnja utičnica/prekidača",
-  "Zaštita od prenapona",
-  "Električni grejači",
-  "Smart home sistemi",
-  "Drugo",
-];
 
 const timeSlots = [
   "08:00 - 10:00",
@@ -43,6 +32,11 @@ const timeSlots = [
 ];
 
 const Booking = () => {
+  const { t, i18n } = useTranslation();
+  
+  const servicesList = t("services.list", { returnObjects: true }) as Array<{ title: string }>;
+  const serviceTypes = [...servicesList.map((s) => s.title), t("booking.other", "Drugo")];
+
   const [date, setDate] = useState<Date>();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -64,12 +58,12 @@ const Booking = () => {
     e.preventDefault();
 
     if (!date) {
-      toast.error("Molimo izaberite datum");
+      toast.error(t("booking.selectDateError", "Molimo izaberite datum"));
       return;
     }
 
     if (!formData.timeSlot) {
-      toast.error("Molimo izaberite termin");
+      toast.error(t("booking.selectTimeError", "Molimo izaberite termin"));
       return;
     }
 
@@ -80,20 +74,20 @@ const Booking = () => {
 
     setIsSubmitting(false);
     setIsSubmitted(true);
-    toast.success("Termin je uspešno zakazan!");
+    toast.success(t("booking.success"));
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: "Početna", url: "https://remielectric.rs" },
-    { name: "Zakazivanje", url: "https://remielectric.rs/zakazivanje" },
+    { name: t("nav.home"), url: "https://remielectric.rs" },
+    { name: t("nav.booking"), url: "https://remielectric.rs/zakazivanje" },
   ]);
 
   if (isSubmitted) {
     return (
       <>
         <SEO
-          title="Termin Zakazan - REMIELECTRIC"
-          description="Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro."
+          title={t("seo.booking.successTitle", "Termin Zakazan - REMIELECTRIC")}
+          description={t("seo.booking.successDesc", "Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro.")}
           noindex={true}
         />
 
@@ -106,30 +100,30 @@ const Booking = () => {
                   <CheckCircle2 className="w-10 h-10 text-accent" />
                 </div>
                 <h1 className="font-display text-3xl font-bold text-foreground mb-4">
-                  Termin je zakazan!
+                  {t("booking.success")}
                 </h1>
                 <p className="text-muted-foreground mb-6">
-                  Hvala vam na poverenju. Kontaktiraćemo vas uskoro radi potvrde termina.
+                  {t("booking.successMessage")}
                 </p>
                 <div className="bg-card rounded-xl p-6 border border-border text-left mb-8">
-                  <h3 className="font-semibold text-foreground mb-4">Detalji zakazivanja:</h3>
+                  <h3 className="font-semibold text-foreground mb-4">{t("booking.bookingDetails")}</h3>
                   <ul className="space-y-2 text-sm">
                     <li className="flex justify-between">
-                      <span className="text-muted-foreground">Ime:</span>
+                      <span className="text-muted-foreground">{t("common.name")}:</span>
                       <span className="font-medium">{formData.name}</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-muted-foreground">Datum:</span>
+                      <span className="text-muted-foreground">{t("common.date")}:</span>
                       <span className="font-medium">
-                        {date && format(date, "PPP", { locale: sr })}
+                        {date && format(date, "PPP", { locale: i18n.language === 'en' ? undefined : sr })}
                       </span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-muted-foreground">Termin:</span>
+                      <span className="text-muted-foreground">{t("common.time")}:</span>
                       <span className="font-medium">{formData.timeSlot}</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-muted-foreground">Usluga:</span>
+                      <span className="text-muted-foreground">{t("booking.service")}:</span>
                       <span className="font-medium">{formData.service}</span>
                     </li>
                   </ul>
@@ -149,7 +143,7 @@ const Booking = () => {
                   }}
                   variant="outline"
                 >
-                  Zakaži novi termin
+                  {t("booking.bookNew")}
                 </Button>
               </div>
             </div>
@@ -163,8 +157,8 @@ const Booking = () => {
   return (
     <>
       <SEO
-        title="Zakaži Termin - REMIELECTRIC | Električar Novi Sad"
-        description="Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online."
+        title={t("seo.booking.title", "Zakaži Termin - REMIELECTRIC | Električar Novi Sad")}
+        description={t("seo.booking.description", "Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online.")}
         keywords="zakazivanje termina električar, online rezervacija elektro usluge, zakaži termin Novi Sad"
         canonical="https://remielectric.rs/zakazivanje"
         structuredData={breadcrumbs}
@@ -178,10 +172,10 @@ const Booking = () => {
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-                Zakaži termin
+                {t("booking.title")}
               </h1>
               <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
-                Popunite formu ispod i kontaktiraćemo vas u najkraćem roku radi potvrde termina.
+                {t("booking.subtitle")}
               </p>
             </div>
           </section>
@@ -194,28 +188,28 @@ const Booking = () => {
                   {/* Personal Info */}
                   <div className="bg-card rounded-2xl p-6 md:p-8 border border-border">
                     <h2 className="font-display font-semibold text-xl text-foreground mb-6">
-                      Vaši podaci
+                      {t("booking.personalInfo")}
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Ime i prezime *</Label>
+                        <Label htmlFor="name">{t("contact.form.name")} *</Label>
                         <Input
                           id="name"
                           name="name"
-                          placeholder="Vaše ime"
+                          placeholder={t("contact.form.name")}
                           value={formData.name}
                           onChange={handleInputChange}
                           required
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Telefon *</Label>
+                        <Label htmlFor="phone">{t("contact.form.phone")} *</Label>
                         <Input
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="Daniel: +38163 312 579 / Srđan: +38160 630 1113"
+                          placeholder="Daniel: 063 312 579 / Srđan: 060 630 1113"
                           value={formData.phone}
                           onChange={handleInputChange}
                           required
@@ -224,7 +218,7 @@ const Booking = () => {
                     </div>
 
                     <div className="mt-4 space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email">{t("contact.form.email")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -239,11 +233,11 @@ const Booking = () => {
                   {/* Service Selection */}
                   <div className="bg-card rounded-2xl p-6 md:p-8 border border-border">
                     <h2 className="font-display font-semibold text-xl text-foreground mb-6">
-                      Usluga
+                      {t("booking.service")}
                     </h2>
 
                     <div className="space-y-2">
-                      <Label>Vrsta usluge *</Label>
+                      <Label>{t("booking.serviceType")} *</Label>
                       <Select
                         value={formData.service}
                         onValueChange={(value) =>
@@ -252,7 +246,7 @@ const Booking = () => {
                         required
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Izaberite uslugu" />
+                          <SelectValue placeholder={t("booking.selectService")} />
                         </SelectTrigger>
                         <SelectContent>
                           {serviceTypes.map((service) => (
@@ -265,11 +259,11 @@ const Booking = () => {
                     </div>
 
                     <div className="mt-4 space-y-2">
-                      <Label htmlFor="description">Opis problema / projekta</Label>
+                      <Label htmlFor="description">{t("booking.description")}</Label>
                       <Textarea
                         id="description"
                         name="description"
-                        placeholder="Opišite ukratko šta vam treba..."
+                        placeholder={t("booking.descriptionPlaceholder")}
                         value={formData.description}
                         onChange={handleInputChange}
                         rows={4}
@@ -280,13 +274,13 @@ const Booking = () => {
                   {/* Date & Time */}
                   <div className="bg-card rounded-2xl p-6 md:p-8 border border-border">
                     <h2 className="font-display font-semibold text-xl text-foreground mb-6">
-                      Datum i vreme
+                      {t("booking.dateTime")}
                     </h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Date Picker */}
                       <div className="space-y-2">
-                        <Label>Željeni datum *</Label>
+                        <Label>{t("booking.preferredDate")} *</Label>
                         <Popover>
                           <PopoverTrigger asChild>
                             <Button
@@ -297,7 +291,7 @@ const Booking = () => {
                               )}
                             >
                               <CalendarIcon className="mr-2 h-4 w-4" />
-                              {date ? format(date, "PPP", { locale: sr }) : "Izaberite datum"}
+                              {date ? format(date, "PPP", { locale: i18n.language === 'en' ? undefined : sr }) : t("booking.selectDate")}
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-0" align="start">
@@ -314,7 +308,7 @@ const Booking = () => {
 
                       {/* Time Slot */}
                       <div className="space-y-2">
-                        <Label>Željeni termin *</Label>
+                        <Label>{t("booking.preferredTime")} *</Label>
                         <Select
                           value={formData.timeSlot}
                           onValueChange={(value) =>
@@ -323,7 +317,7 @@ const Booking = () => {
                         >
                           <SelectTrigger>
                             <Clock className="mr-2 h-4 w-4" />
-                            <SelectValue placeholder="Izaberite vreme" />
+                            <SelectValue placeholder={t("booking.selectTime")} />
                           </SelectTrigger>
                           <SelectContent>
                             {timeSlots.map((slot) => (
@@ -337,7 +331,6 @@ const Booking = () => {
                     </div>
                   </div>
 
-                  {/* Submit */}
                   <Button
                     type="submit"
                     variant="electric"
@@ -348,15 +341,15 @@ const Booking = () => {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-5 h-5 animate-spin" />
-                        Zakazujem...
+                        {t("booking.submitting")}
                       </>
                     ) : (
-                      "Zakaži termin besplatno"
+                      t("booking.submit")
                     )}
                   </Button>
 
                   <p className="text-center text-sm text-muted-foreground">
-                    Kontaktiraćemo vas telefonom radi potvrde termina. Bez obaveza.
+                    {t("booking.noObligation")}
                   </p>
                 </form>
               </div>

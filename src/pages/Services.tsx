@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Home,
   Building2,
@@ -17,118 +18,37 @@ import {
 import SEO from "@/components/SEO";
 import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
 
-const services = [
-  {
-    icon: Home,
-    title: "Kućne elektro instalacije",
-    description:
-      "Kompletne elektro instalacije za stambene objekte - od razvodnih tabli do utičnica i prekidača. Radimo na novogradnjama i renoviranjima.",
-    features: [
-      "Ugradnja razvodnih tabli i osigurača",
-      "Postavljanje utičnica i prekidača",
-      "Provlačenje kablova",
-      "Povezivanje kućnih aparata",
-      "Ugradnja interfona i zvona",
-    ],
-    price: "Po dogovoru",
-  },
-  {
-    icon: Building2,
-    title: "Poslovni objekti",
-    description:
-      "Elektro instalacije za poslovne prostore, kancelarije, lokale i industrijske objekte. Prilagođeno vašim poslovnim potrebama.",
-    features: [
-      "Industrijske elektro instalacije",
-      "Kancelarijska infrastruktura",
-      "Trofazni sistemi",
-      "Elektro ormari",
-      "Uzemljenje i gromobranska zaštita",
-    ],
-    price: "Po dogovoru",
-  },
-  {
-    icon: Wrench,
-    title: "Održavanje i popravke",
-    description:
-      "Brze intervencije i redovno održavanje elektro instalacija. Dostupni smo 7 dana u nedelji za hitne slučajeve.",
-    features: [
-      "Dijagnostika kvarova",
-      "Zamena osigurača i sklopki",
-      "Popravka kratkih spojeva",
-      "Servis elektro uređaja",
-      "Hitne intervencije",
-    ],
-    price: "Od 2.000 RSD",
-  },
-  {
-    icon: Lightbulb,
-    title: "LED rasveta",
-    description:
-      "Ugradnja energetski efikasne LED rasvete i pametnih sistema osvetljenja za dom i posao.",
-    features: [
-      "Unutrašnja LED rasveta",
-      "Spoljna LED rasveta",
-      "Dekorativna rasveta",
-      "Smart osvetljenje",
-      "Zamena starih svetiljki",
-    ],
-    price: "Od 1.500 RSD",
-  },
-  {
-    icon: Plug,
-    title: "Ugradnja utičnica i prekidača",
-    description: "Profesionalna ugradnja i zamena utičnica, prekidača i senzora pokreta.",
-    features: [
-      "Obične i šuko utičnice",
-      "USB utičnice",
-      "Prekidači i regulatori",
-      "Senzori pokreta",
-      "Tajmeri",
-    ],
-    price: "Od 500 RSD",
-  },
-  {
-    icon: Shield,
-    title: "Zaštita od prenapona",
-    description: "Ugradnja zaštitnih uređaja za sigurnost vaše elektro opreme i aparata.",
-    features: [
-      "Prenaponska zaštita",
-      "Diferencijalna zaštita",
-      "FID sklopke",
-      "Uzemljenje",
-      "Kontrola instalacija",
-    ],
-    price: "Od 3.000 RSD",
-  },
-  {
-    icon: Zap,
-    title: "Električni grejači",
-    description: "Ugradnja i povezivanje električnih grejnih sistema za komforan dom.",
-    features: [
-      "Podno grejanje",
-      "Električni radijatori",
-      "IR paneli",
-      "Termostatska regulacija",
-      "Energetski efikasni sistemi",
-    ],
-    price: "Po dogovoru",
-  },
-  {
-    icon: Settings,
-    title: "Smart home sistemi",
-    description: "Integracija pametnih sistema za kontrolu osvetljenja, grejanja i sigurnosti.",
-    features: [
-      "Pametne utičnice",
-      "Daljinska kontrola",
-      "Automatizacija osvetljenja",
-      "Integracija sa mobilnim",
-      "Glasovna kontrola",
-    ],
-    price: "Po dogovoru",
-  },
+const serviceIcons = [
+  Home,
+  Building2,
+  Wrench,
+  Lightbulb,
+  Plug,
+  Shield,
+  Zap,
+  Settings,
 ];
 
+const servicePrices = [
+  "Po dogovoru",
+  "Po dogovoru",
+  "Od 2.000 RSD",
+  "Od 1.500 RSD",
+  "Od 500 RSD",
+  "Od 3.000 RSD",
+  "Po dogovoru",
+  "Po dogovoru",
+];
+
+
 const Services = () => {
+  const { t } = useTranslation();
+  
+  const servicesList = t("services.list", { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    features: string[];
+  }>;
   const breadcrumbs = breadcrumbSchema([
     { name: "Početna", url: "https://remielectric.rs" },
     { name: "Usluge", url: "https://remielectric.rs/usluge" },
@@ -148,8 +68,8 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad"
-        description="Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno."
+        title={t("seo.services.title", "Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad")}
+        description={t("seo.services.description", "Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno.")}
         keywords="elektro usluge Novi Sad, kućne instalacije, LED rasveta, poslovne instalacije, održavanje elektro instalacija"
         canonical="https://remielectric.rs/usluge"
         structuredData={servicesStructuredData}
@@ -163,11 +83,10 @@ const Services = () => {
           <section className="py-16 md:py-24 bg-primary">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
-                Naše usluge
+                {t("services.pageTitle")}
               </h1>
               <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-                Kompletne elektro usluge za stambene i poslovne objekte. Kvalitet, pouzdanost i fer
-                cene.
+                {t("services.pageSubtitle")}
               </p>
             </div>
           </section>
@@ -176,20 +95,22 @@ const Services = () => {
           <section className="py-16 md:py-24">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {services.map((service, index) => (
+                {servicesList.map((service, index) => {
+                  const Icon = serviceIcons[index] || Home;
+                  return (
                   <div
                     key={index}
                     className="bg-card rounded-2xl p-6 md:p-8 border border-border hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-start gap-4 mb-6">
                       <div className="w-14 h-14 rounded-xl bg-electric-blue-light flex items-center justify-center flex-shrink-0">
-                        <service.icon className="w-7 h-7 text-primary" />
+                        <Icon className="w-7 h-7 text-primary" />
                       </div>
                       <div>
                         <h2 className="font-display font-semibold text-xl text-foreground mb-1">
                           {service.title}
                         </h2>
-                        <span className="text-accent font-semibold text-sm">{service.price}</span>
+                        <span className="text-accent font-semibold text-sm">{servicePrices[index]}</span>
                       </div>
                     </div>
 
@@ -208,12 +129,12 @@ const Services = () => {
 
                     <Link to="/zakazivanje">
                       <Button variant="outline" className="w-full group">
-                        Zakaži uslugu
+                        {t("services.viewAll")}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
                   </div>
-                ))}
+                )})}
               </div>
             </div>
           </section>
@@ -222,21 +143,20 @@ const Services = () => {
           <section className="py-16 bg-muted/50">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Nije na listi? Kontaktirajte nas!
+                {t("services.ctaTitle")}
               </h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Radimo i druge elektro usluge po dogovoru. Opišite vaš problem i poslaćemo vam
-                besplatnu procenu.
+                {t("services.ctaSubtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/zakazivanje">
                   <Button variant="electric" size="lg">
-                    Zakaži termin besplatno
+                    {t("nav.booking")}
                   </Button>
                 </Link>
                 <Link to="/kontakt">
                   <Button variant="outline" size="lg">
-                    Kontaktirajte nas
+                    {t("services.ctaButton")}
                   </Button>
                 </Link>
               </div>

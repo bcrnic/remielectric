@@ -10,36 +10,10 @@ import { useTranslation } from "react-i18next";
 const FAQSection = () => {
   const { t } = useTranslation();
 
-  const faqs = [
-    {
-      question: t("faq.list.0.question"),
-      answer: t("faq.list.0.answer"),
-    },
-    {
-      question: t("faq.list.1.question"),
-      answer: t("faq.list.1.answer"),
-    },
-    {
-      question: t("faq.list.2.question"),
-      answer: t("faq.list.2.answer"),
-    },
-    {
-      question: t("faq.list.3.question"),
-      answer: t("faq.list.3.answer"),
-    },
-    {
-      question: t("faq.list.4.question"),
-      answer: t("faq.list.4.answer"),
-    },
-    {
-      question: t("faq.list.5.question"),
-      answer: t("faq.list.5.answer"),
-    },
-    {
-      question: t("faq.list.6.question"),
-      answer: t("faq.list.6.answer"),
-    },
-  ];
+  const faqs = t("faq.list", { returnObjects: true }) as Array<{
+    question: string;
+    answer: string;
+  }>;
 
   return (
     <section className="py-16 md:py-24">
@@ -74,12 +48,12 @@ const FAQSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">Imate još pitanja?</p>
+          <p className="text-muted-foreground mb-4">{t("faq.moreQuestions", "Imate još pitanja?")}</p>
           <a
             href="tel:+38163312579"
             className="inline-flex items-center gap-2 text-primary hover:text-electric-blue-dark font-semibold transition-colors"
           >
-            Pozovite nas: +38163 312 579
+            {t("faq.callUs", "Pozovite nas: ")} 063 312 579
           </a>
         </div>
       </div>

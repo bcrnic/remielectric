@@ -8,8 +8,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import { organizationSchema, websiteSchema } from "@/lib/structuredData";
+import { useTranslation } from "react-i18next";
 
 const Index = () => {
+  const { t } = useTranslation();
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [organizationSchema, websiteSchema],
@@ -18,8 +20,8 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="REMIELECTRIC - Električar Novi Sad | Elektro Instalacije"
-        description="REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!"
+        title={t("seo.home.title", "REMIELECTRIC - Električar Novi Sad | Elektro Instalacije")}
+        description={t("seo.home.description", "REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!")}
         keywords="električar Novi Sad, elektro instalacije, električne instalacije Novi Sad, električar, REMIELECTRIC, Daniel Crnić, elektro usluge Novi Sad"
         canonical="https://remielectric.rs"
         structuredData={structuredData}

@@ -19,7 +19,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Električar na poslu" className="w-full h-full object-cover" />
+        <img src={heroImage} alt={t("hero.imageAlt", "Električar na poslu")} className="w-full h-full object-cover" />
         <div className="absolute inset-0 gradient-overlay" />
       </div>
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-accent font-medium text-sm">Aktivni od 2023 · Novi Sad</span>
+            <span className="text-accent font-medium text-sm">{t("hero.badge", "Aktivni od 2023 · Novi Sad")}</span>
           </div>
 
           {/* Heading */}

@@ -27,29 +27,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>{t("about.description")}</p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="mt-8 p-6 bg-card rounded-xl border border-border">
-              <h3 className="font-display font-semibold text-lg text-foreground mb-4">
-                Kontakt informacije
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li className="flex justify-between">
-                  <span className="text-muted-foreground">Adresa:</span>
-                  <span className="text-foreground font-medium">
-                    Stevana Hristića 5, 21000 Novi Sad
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-muted-foreground">Vlasnik:</span>
-                  <span className="text-foreground font-medium">Daniel Crnić</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-muted-foreground">Delatnost:</span>
-                  <span className="text-foreground font-medium">Elektro instalacije (4321)</span>
-                </li>
-              </ul>
+              <p>{t("about.description2")}</p>
             </div>
 
             <Link to="/kontakt" className="inline-block mt-8">

@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm">
-            Sve recenzije su autentične i potiču od naših zadovoljnih klijenata.
+            {t("testimonials.authenticReviews", "Sve recenzije su autentične i potiču od naših zadovoljnih klijenata.")}
           </p>
         </div>
       </div>

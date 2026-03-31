@@ -50,21 +50,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button Desktop */}
-          <div className="hidden md:flex items-center gap-2">
-            <a
-              href="tel:+38163312579"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Daniel: +38163 312 579</span>
-            </a>
-            <a
-              href="tel:+381606301113"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Srđan: +38160 630 1113</span>
-            </a>
+          <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
             <LanguageSwitcher />
             <Link to="/zakazivanje">

@@ -112,21 +112,7 @@
       gtag("config", "%VITE_GA_MEASUREMENT_ID%");
     </script>
 
-    <script>
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var p = params.get("p");
-        if (!p) return;
-        params.delete("p");
-        var query = params.toString();
-        var basePath = window.location.pathname;
-        var decoded = decodeURIComponent(p);
-        var normalizedBase = basePath.endsWith("/") ? basePath : basePath + "/";
-        var normalizedPath = decoded.startsWith("/") ? decoded.slice(1) : decoded;
-        var newUrl = normalizedBase + normalizedPath + (query ? "?" + query : "");
-        window.history.replaceState(null, "", newUrl);
-      })();
-    </script>
+
   </head>
 
   <body>

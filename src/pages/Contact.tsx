@@ -7,10 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/structuredData";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -32,13 +34,13 @@ const Contact = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
-    toast.success("Poruka je uspešno poslata! Kontaktiraćemo vas uskoro.");
+    toast.success(t("contact.form.success"));
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: "Početna", url: "https://remielectric.rs" },
-    { name: "Kontakt", url: "https://remielectric.rs/kontakt" },
+    { name: t("nav.home"), url: "https://remielectric.rs" },
+    { name: t("nav.contact"), url: "https://remielectric.rs/kontakt" },
   ]);
 
   const structuredData = {
@@ -49,8 +51,8 @@ const Contact = () => {
   return (
     <>
       <SEO
-        title="Kontakt - REMIELECTRIC | Električar Novi Sad"
-        description="Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan."
+        title={t("seo.contact.title", "Kontakt - REMIELECTRIC | Električar Novi Sad")}
+        description={t("seo.contact.description", "Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan.")}
         keywords="kontakt električar Novi Sad, REMIELECTRIC kontakt, elektro usluge kontakt, Stevana Hristića 5"
         canonical="https://remielectric.rs/kontakt"
         structuredData={structuredData}
@@ -64,11 +66,10 @@ const Contact = () => {
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-                Kontaktirajte nas
+                {t("contact.title")}
               </h1>
               <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
-                Imate pitanje ili vam je potrebna pomoć? Javite nam se i odgovorićemo u najkraćem
-                roku.
+                {t("contact.subtitle")}
               </p>
             </div>
           </section>
@@ -80,7 +81,7 @@ const Contact = () => {
                 {/* Contact Info */}
                 <div>
                   <h2 className="font-display text-2xl font-bold text-foreground mb-8">
-                    Kontakt informacije
+                    {t("contact.info")}
                   </h2>
 
                   <div className="space-y-6">
@@ -109,14 +110,14 @@ const Contact = () => {
                           href="tel:+38163312579"
                           className="text-primary hover:text-electric-blue-dark transition-colors font-medium"
                         >
-                          Daniel: +38163 312 579
+                          Daniel: 063 312 579
                         </a>
                         <div className="mt-1">
                           <a
                             href="tel:+381606301113"
                             className="text-primary hover:text-electric-blue-dark transition-colors font-medium"
                           >
-                            Srđan: +38160 630 1113
+                            Srđan: 060 630 1113
                           </a>
                         </div>
                       </div>
@@ -144,11 +145,11 @@ const Contact = () => {
                         <Clock className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Radno vreme</h3>
+                        <h3 className="font-semibold text-foreground mb-1">{t("footer.workingHours")}</h3>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>Ponedeljak - Petak: 08:00 - 18:00</li>
-                          <li>Subota: 09:00 - 14:00</li>
-                          <li>Nedelja: Zatvoreno</li>
+                          <li>{t("footer.workingDays")}</li>
+                          <li>{t("footer.saturday")}</li>
+                          <li>{t("footer.sunday")}</li>
                         </ul>
                       </div>
                     </div>
@@ -159,13 +160,13 @@ const Contact = () => {
                     <a href="tel:+38163312579" className="flex-1">
                       <Button variant="default" size="lg" className="w-full">
                         <Phone className="w-4 h-4" />
-                        Pozovite Daniela
+                        {t("contact.form.callDaniel", "Pozovite Daniela")}
                       </Button>
                     </a>
                     <a href="tel:+381606301113" className="flex-1">
                       <Button variant="default" size="lg" className="w-full">
                         <Phone className="w-4 h-4" />
-                        Pozovite Srđana
+                        {t("contact.form.callSrdjan", "Pozovite Srđana")}
                       </Button>
                     </a>
                   </div>
@@ -174,16 +175,16 @@ const Contact = () => {
                 {/* Contact Form */}
                 <div className="bg-card rounded-2xl p-6 md:p-8 border border-border">
                   <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-                    Pošaljite poruku
+                    {t("contact.form.title")}
                   </h2>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Ime i prezime *</Label>
+                      <Label htmlFor="name">{t("contact.form.name")} *</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Vaše ime"
+                        placeholder={t("contact.form.name")}
                         value={formData.name}
                         onChange={handleInputChange}
                         required
@@ -192,7 +193,7 @@ const Contact = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">{t("contact.form.email")} *</Label>
                         <Input
                           id="email"
                           name="email"
@@ -204,12 +205,12 @@ const Contact = () => {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Telefon</Label>
+                        <Label htmlFor="phone">{t("contact.form.phone")}</Label>
                         <Input
                           id="phone"
                           name="phone"
                           type="tel"
-                          placeholder="+38160 630 1113"
+                          placeholder="060 630 1113"
                           value={formData.phone}
                           onChange={handleInputChange}
                         />
@@ -217,11 +218,11 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message">Poruka *</Label>
+                      <Label htmlFor="message">{t("contact.form.message")} *</Label>
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Kako vam možemo pomoći?"
+                        placeholder="..."
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={5}
@@ -239,12 +240,12 @@ const Contact = () => {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          Šaljem...
+                          {t("contact.form.sending")}
                         </>
                       ) : (
                         <>
                           <Send className="w-4 h-4" />
-                          Pošalji poruku
+                          {t("contact.form.send")}
                         </>
                       )}
                     </Button>
@@ -254,7 +255,7 @@ const Contact = () => {
 
               {/* Map */}
               <div className="mt-12">
-                <h2 className="font-display text-2xl font-bold text-foreground mb-6">Lokacija</h2>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-6">{t("contact.location")}</h2>
                 <div className="w-full h-[400px] rounded-2xl overflow-hidden border border-border">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.0559722961197!2d19.8380483!3d45.2471495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b109d6f1c5f73%3A0xf24be4b0c6f4b26e!2sStevana%20Hristi%C4%87a%205%2C%20Novi%20Sad!5e0!3m2!1sen!2srs!4v1700000000000!5m2!1sen!2srs"
@@ -264,7 +265,7 @@ const Contact = () => {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="REMIELECTRIC lokacija"
+                    title={t("contact.form.mapTitle", "REMIELECTRIC lokacija")}
                   />
                 </div>
               </div>
