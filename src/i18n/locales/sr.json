@@ -51,22 +51,46 @@
       {
         "title": "Ugradnja utičnica i prekidača",
         "description": "Profesionalna ugradnja i zamena utičnica, prekidača i senzora pokreta.",
-        "features": ["Obične i šuko utičnice", "USB utičnice", "Prekidači i regulatori", "Senzori pokreta", "Tajmeri"]
+        "features": [
+          "Obične i šuko utičnice",
+          "USB utičnice",
+          "Prekidači i regulatori",
+          "Senzori pokreta",
+          "Tajmeri"
+        ]
       },
       {
         "title": "Zaštita od prenapona",
         "description": "Ugradnja zaštitnih uređaja za sigurnost vaše elektro opreme i aparata.",
-        "features": ["Prenaponska zaštita", "Diferencijalna zaštita", "FID sklopke", "Uzemljenje", "Kontrola instalacija"]
+        "features": [
+          "Prenaponska zaštita",
+          "Diferencijalna zaštita",
+          "FID sklopke",
+          "Uzemljenje",
+          "Kontrola instalacija"
+        ]
       },
       {
         "title": "Električni grejači",
         "description": "Ugradnja i povezivanje električnih grejnih sistema za komforan dom.",
-        "features": ["Podno grejanje", "Električni radijatori", "IR paneli", "Termostatska regulacija", "Energetski efikasni sistemi"]
+        "features": [
+          "Podno grejanje",
+          "Električni radijatori",
+          "IR paneli",
+          "Termostatska regulacija",
+          "Energetski efikasni sistemi"
+        ]
       },
       {
         "title": "Smart home sistemi",
         "description": "Integracija pametnih sistema za kontrolu osvetljenja, grejanja i sigurnosti.",
-        "features": ["Pametne utičnice", "Daljinska kontrola", "Automatizacija osvetljenja", "Integracija sa mobilnim", "Glasovna kontrola"]
+        "features": [
+          "Pametne utičnice",
+          "Daljinska kontrola",
+          "Automatizacija osvetljenja",
+          "Integracija sa mobilnim",
+          "Glasovna kontrola"
+        ]
       }
     ]
   },

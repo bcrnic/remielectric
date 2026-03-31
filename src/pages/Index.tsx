@@ -21,7 +21,10 @@ const Index = () => {
     <>
       <SEO
         title={t("seo.home.title", "REMIELECTRIC - Električar Novi Sad | Elektro Instalacije")}
-        description={t("seo.home.description", "REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!")}
+        description={t(
+          "seo.home.description",
+          "REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!",
+        )}
         keywords="električar Novi Sad, elektro instalacije, električne instalacije Novi Sad, električar, REMIELECTRIC, Daniel Crnić, elektro usluge Novi Sad"
         canonical="https://remielectric.rs"
         structuredData={structuredData}

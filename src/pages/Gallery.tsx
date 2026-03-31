@@ -42,16 +42,19 @@ const galleryImages = [
 
 const Gallery = () => {
   const { t } = useTranslation();
-  
+
   // Fallback to existing items if not in i18n
-  const galleryItems = t("gallery.items", { returnObjects: true, defaultValue: [
-  { title: "Razvodna tabla", description: "Profesionalna ugradnja razvodne table" },
-  { title: "LED rasveta", description: "Moderna LED rasveta u stanu" },
-  { title: "Utičnice i prekidači", description: "Ugradnja modernih utičnica" },
-  { title: "Smart home sistem", description: "Pametna kontrola osvetljenja" },
-  { title: "Spoljna rasveta", description: "Dekorativna spoljna rasveta" },
-  { title: "Industrijski sistem", description: "Elektro ormar za poslovni objekat" },
-  ] }) as Array<{ title: string; description: string }>;
+  const galleryItems = t("gallery.items", {
+    returnObjects: true,
+    defaultValue: [
+      { title: "Razvodna tabla", description: "Profesionalna ugradnja razvodne table" },
+      { title: "LED rasveta", description: "Moderna LED rasveta u stanu" },
+      { title: "Utičnice i prekidači", description: "Ugradnja modernih utičnica" },
+      { title: "Smart home sistem", description: "Pametna kontrola osvetljenja" },
+      { title: "Spoljna rasveta", description: "Dekorativna spoljna rasveta" },
+      { title: "Industrijski sistem", description: "Elektro ormar za poslovni objekat" },
+    ],
+  }) as Array<{ title: string; description: string }>;
 
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
@@ -86,7 +89,10 @@ const Gallery = () => {
     <>
       <SEO
         title={t("seo.gallery.title", "Galerija Radova - REMIELECTRIC | Električar Novi Sad")}
-        description={t("seo.gallery.description", "Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više.")}
+        description={t(
+          "seo.gallery.description",
+          "Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više.",
+        )}
         keywords="galerija radova, elektro instalacije galerija, LED rasveta primeri, završeni projekti Novi Sad"
         canonical="https://remielectric.rs/galerija"
         structuredData={breadcrumbs}

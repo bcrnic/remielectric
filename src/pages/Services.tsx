@@ -18,16 +18,7 @@ import {
 import SEO from "@/components/SEO";
 import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
 
-const serviceIcons = [
-  Home,
-  Building2,
-  Wrench,
-  Lightbulb,
-  Plug,
-  Shield,
-  Zap,
-  Settings,
-];
+const serviceIcons = [Home, Building2, Wrench, Lightbulb, Plug, Shield, Zap, Settings];
 
 const servicePrices = [
   "Po dogovoru",
@@ -40,10 +31,9 @@ const servicePrices = [
   "Po dogovoru",
 ];
 
-
 const Services = () => {
   const { t } = useTranslation();
-  
+
   const servicesList = t("services.list", { returnObjects: true }) as Array<{
     title: string;
     description: string;
@@ -69,7 +59,10 @@ const Services = () => {
     <>
       <SEO
         title={t("seo.services.title", "Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad")}
-        description={t("seo.services.description", "Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno.")}
+        description={t(
+          "seo.services.description",
+          "Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno.",
+        )}
         keywords="elektro usluge Novi Sad, kućne instalacije, LED rasveta, poslovne instalacije, održavanje elektro instalacija"
         canonical="https://remielectric.rs/usluge"
         structuredData={servicesStructuredData}
@@ -98,43 +91,46 @@ const Services = () => {
                 {servicesList.map((service, index) => {
                   const Icon = serviceIcons[index] || Home;
                   return (
-                  <div
-                    key={index}
-                    className="bg-card rounded-2xl p-6 md:p-8 border border-border hover:shadow-lg transition-shadow"
-                  >
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-electric-blue-light flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-7 h-7 text-primary" />
+                    <div
+                      key={index}
+                      className="bg-card rounded-2xl p-6 md:p-8 border border-border hover:shadow-lg transition-shadow"
+                    >
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-14 h-14 rounded-xl bg-electric-blue-light flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-7 h-7 text-primary" />
+                        </div>
+                        <div>
+                          <h2 className="font-display font-semibold text-xl text-foreground mb-1">
+                            {service.title}
+                          </h2>
+                          <span className="text-accent font-semibold text-sm">
+                            {servicePrices[index]}
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <h2 className="font-display font-semibold text-xl text-foreground mb-1">
-                          {service.title}
-                        </h2>
-                        <span className="text-accent font-semibold text-sm">{servicePrices[index]}</span>
-                      </div>
+
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      <ul className="space-y-2 mb-6">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2 text-sm text-foreground">
+                            <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Link to="/zakazivanje">
+                        <Button variant="outline" className="w-full group">
+                          {t("services.viewAll")}
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
-
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    <ul className="space-y-2 mb-6">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Link to="/zakazivanje">
-                      <Button variant="outline" className="w-full group">
-                        {t("services.viewAll")}
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                )})}
+                  );
+                })}
               </div>
             </div>
           </section>

@@ -48,7 +48,9 @@ const FAQSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">{t("faq.moreQuestions", "Imate još pitanja?")}</p>
+          <p className="text-muted-foreground mb-4">
+            {t("faq.moreQuestions", "Imate još pitanja?")}
+          </p>
           <a
             href="tel:+38163312579"
             className="inline-flex items-center gap-2 text-primary hover:text-electric-blue-dark font-semibold transition-colors"

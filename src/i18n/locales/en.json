@@ -51,22 +51,46 @@
       {
         "title": "Sockets & Switches",
         "description": "Professional installation and replacement of outlets, switches and motion sensors.",
-        "features": ["Standard and Schuko sockets", "USB sockets", "Switches and dimmers", "Motion sensors", "Timers"]
+        "features": [
+          "Standard and Schuko sockets",
+          "USB sockets",
+          "Switches and dimmers",
+          "Motion sensors",
+          "Timers"
+        ]
       },
       {
         "title": "Surge Protection",
         "description": "Installation of protective devices for the safety of your electrical equipment and appliances.",
-        "features": ["Surge protection", "Differential protection", "RCD switches", "Grounding", "Installation control"]
+        "features": [
+          "Surge protection",
+          "Differential protection",
+          "RCD switches",
+          "Grounding",
+          "Installation control"
+        ]
       },
       {
         "title": "Electric Heating",
         "description": "Installation and connection of electric heating systems for a comfortable home.",
-        "features": ["Underfloor heating", "Electric radiators", "IR panels", "Thermostatic regulation", "Energy efficient systems"]
+        "features": [
+          "Underfloor heating",
+          "Electric radiators",
+          "IR panels",
+          "Thermostatic regulation",
+          "Energy efficient systems"
+        ]
       },
       {
         "title": "Smart Home Systems",
         "description": "Integration of smart systems for lighting, heating and security control.",
-        "features": ["Smart sockets", "Remote control", "Lighting automation", "Mobile integration", "Voice control"]
+        "features": [
+          "Smart sockets",
+          "Remote control",
+          "Lighting automation",
+          "Mobile integration",
+          "Voice control"
+        ]
       }
     ]
   },

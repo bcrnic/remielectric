@@ -33,7 +33,7 @@ const timeSlots = [
 
 const Booking = () => {
   const { t, i18n } = useTranslation();
-  
+
   const servicesList = t("services.list", { returnObjects: true }) as Array<{ title: string }>;
   const serviceTypes = [...servicesList.map((s) => s.title), t("booking.other", "Drugo")];
 
@@ -87,7 +87,10 @@ const Booking = () => {
       <>
         <SEO
           title={t("seo.booking.successTitle", "Termin Zakazan - REMIELECTRIC")}
-          description={t("seo.booking.successDesc", "Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro.")}
+          description={t(
+            "seo.booking.successDesc",
+            "Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro.",
+          )}
           noindex={true}
         />
 
@@ -102,11 +105,11 @@ const Booking = () => {
                 <h1 className="font-display text-3xl font-bold text-foreground mb-4">
                   {t("booking.success")}
                 </h1>
-                <p className="text-muted-foreground mb-6">
-                  {t("booking.successMessage")}
-                </p>
+                <p className="text-muted-foreground mb-6">{t("booking.successMessage")}</p>
                 <div className="bg-card rounded-xl p-6 border border-border text-left mb-8">
-                  <h3 className="font-semibold text-foreground mb-4">{t("booking.bookingDetails")}</h3>
+                  <h3 className="font-semibold text-foreground mb-4">
+                    {t("booking.bookingDetails")}
+                  </h3>
                   <ul className="space-y-2 text-sm">
                     <li className="flex justify-between">
                       <span className="text-muted-foreground">{t("common.name")}:</span>
@@ -115,7 +118,8 @@ const Booking = () => {
                     <li className="flex justify-between">
                       <span className="text-muted-foreground">{t("common.date")}:</span>
                       <span className="font-medium">
-                        {date && format(date, "PPP", { locale: i18n.language === 'en' ? undefined : sr })}
+                        {date &&
+                          format(date, "PPP", { locale: i18n.language === "en" ? undefined : sr })}
                       </span>
                     </li>
                     <li className="flex justify-between">
@@ -158,7 +162,10 @@ const Booking = () => {
     <>
       <SEO
         title={t("seo.booking.title", "Zakaži Termin - REMIELECTRIC | Električar Novi Sad")}
-        description={t("seo.booking.description", "Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online.")}
+        description={t(
+          "seo.booking.description",
+          "Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online.",
+        )}
         keywords="zakazivanje termina električar, online rezervacija elektro usluge, zakaži termin Novi Sad"
         canonical="https://remielectric.rs/zakazivanje"
         structuredData={breadcrumbs}
@@ -291,7 +298,11 @@ const Booking = () => {
                               )}
                             >
                               <CalendarIcon className="mr-2 h-4 w-4" />
-                              {date ? format(date, "PPP", { locale: i18n.language === 'en' ? undefined : sr }) : t("booking.selectDate")}
+                              {date
+                                ? format(date, "PPP", {
+                                    locale: i18n.language === "en" ? undefined : sr,
+                                  })
+                                : t("booking.selectDate")}
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-0" align="start">

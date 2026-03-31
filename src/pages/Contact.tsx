@@ -52,7 +52,10 @@ const Contact = () => {
     <>
       <SEO
         title={t("seo.contact.title", "Kontakt - REMIELECTRIC | Električar Novi Sad")}
-        description={t("seo.contact.description", "Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan.")}
+        description={t(
+          "seo.contact.description",
+          "Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan.",
+        )}
         keywords="kontakt električar Novi Sad, REMIELECTRIC kontakt, elektro usluge kontakt, Stevana Hristića 5"
         canonical="https://remielectric.rs/kontakt"
         structuredData={structuredData}
@@ -145,7 +148,9 @@ const Contact = () => {
                         <Clock className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">{t("footer.workingHours")}</h3>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          {t("footer.workingHours")}
+                        </h3>
                         <ul className="text-muted-foreground space-y-1 text-sm">
                           <li>{t("footer.workingDays")}</li>
                           <li>{t("footer.saturday")}</li>
@@ -255,7 +260,9 @@ const Contact = () => {
 
               {/* Map */}
               <div className="mt-12">
-                <h2 className="font-display text-2xl font-bold text-foreground mb-6">{t("contact.location")}</h2>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                  {t("contact.location")}
+                </h2>
                 <div className="w-full h-[400px] rounded-2xl overflow-hidden border border-border">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2806.0559722961197!2d19.8380483!3d45.2471495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b109d6f1c5f73%3A0xf24be4b0c6f4b26e!2sStevana%20Hristi%C4%87a%205%2C%20Novi%20Sad!5e0!3m2!1sen!2srs!4v1700000000000!5m2!1sen!2srs"
