@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, Award, Users } from "lucide-react";
-
-const stats = [
-  { icon: Users, value: "100+", label: "Zadovoljnih klijenata" },
-  { icon: Award, value: "10+", label: "Godina iskustva" },
-  { icon: Clock, value: "24h", label: "Brza reakcija" },
-  { icon: Shield, value: "100%", label: "Garancija kvaliteta" },
-];
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+  
+  const stats = [
+    { icon: Users, value: t("about.stats.0.value"), label: t("about.stats.0.label") },
+    { icon: Award, value: t("about.stats.1.value"), label: t("about.stats.1.label") },
+    { icon: Clock, value: t("about.stats.2.value"), label: t("about.stats.2.label") },
+    { icon: Shield, value: t("about.stats.3.value"), label: t("about.stats.3.label") },
+  ];
+
   return (
     <section className="py-20 md:py-28 bg-muted/50">
       <div className="container mx-auto px-4">
@@ -17,24 +20,14 @@ const AboutSection = () => {
           {/* Content */}
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              O nama
+              {t("about.title")}
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-              REMIELECTRIC - Vaš partner za elektro instalacije
+              {t("about.subtitle")}
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Osnovani 21. juna 2023. godine, REMIELECTRIC je mlada ali ambiciozna firma
-                specijalizovana za elektro instalacije u Novom Sadu i okolini.
-              </p>
-              <p>
-                Pod vođstvom Daniela Crnića, naš tim pruža profesionalne usluge za stambene i
-                poslovne objekte. Koristimo kvalitetne materijale i pratimo najnovije standarde u
-                industriji.
-              </p>
-              <p>
-                Naša misija je da svakom klijentu pružimo pouzdanu i sigurnu elektro instalaciju uz
-                fer cene i garantovanu uslugu.
+                {t("about.description")}
               </p>
             </div>
 
@@ -63,7 +56,7 @@ const AboutSection = () => {
 
             <Link to="/kontakt" className="inline-block mt-8">
               <Button variant="default" size="lg">
-                Kontaktirajte nas
+                {t("services.ctaButton")}
               </Button>
             </Link>
           </div>

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema } from "@/lib/structuredData";
+import { useTranslation } from "react-i18next";
 
 // Import gallery images
 const withBase = (p: string) => {
@@ -65,6 +65,7 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -89,15 +90,20 @@ const Gallery = () => {
     }
   };
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Početna", url: "https://remielectric.rs" },
+    { name: "Galerija", url: "https://remielectric.rs/galerija" },
+  ]);
+
   return (
     <>
-      <Helmet>
-        <title>Galerija Radova - REMIELECTRIC | Električar Novi Sad</title>
-        <meta
-          name="description"
-          content="Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više."
-        />
-      </Helmet>
+      <SEO
+        title="Galerija Radova - REMIELECTRIC | Električar Novi Sad"
+        description="Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više."
+        keywords="galerija radova, elektro instalacije galerija, LED rasveta primeri, završeni projekti Novi Sad"
+        canonical="https://remielectric.rs/galerija"
+        structuredData={breadcrumbs}
+      />
 
       <div className="min-h-screen">
         <Navbar />
@@ -107,10 +113,10 @@ const Gallery = () => {
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">
               <h1 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-                Galerija radova
+                {t("gallery.title")}
               </h1>
               <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto">
-                Pogledajte neke od naših završenih projekata. Kvalitet koji govori sam za sebe.
+                {t("gallery.subtitle")}
               </p>
             </div>
           </section>
@@ -147,15 +153,14 @@ const Gallery = () => {
           <section className="py-12 md:py-16 bg-muted/50">
             <div className="container mx-auto px-4 text-center">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Sviđa vam se naš rad?
+                {t("gallery.ctaTitle")}
               </h2>
               <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                Kontaktirajte nas i razgovarajte sa nama o vašem projektu. Besplatna procena i
-                savetovanje.
+                {t("gallery.ctaSubtitle")}
               </p>
               <Link to="/zakazivanje">
                 <Button variant="electric" size="lg">
-                  Zakaži termin besplatno
+                  {t("gallery.ctaButton")}
                 </Button>
               </Link>
             </div>
@@ -163,16 +168,13 @@ const Gallery = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
-        <ViberButton />
 
         {/* Lightbox */}
         {selectedImage !== null && (
           <div
-            className="fixed inset-0 z-50 bg-foreground/95 flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
             onClick={closeLightbox}
           >
-            {/* Close Button */}
             <button
               className="absolute top-4 right-4 w-12 h-12 rounded-full bg-card/20 hover:bg-card/40 flex items-center justify-center text-primary-foreground transition-colors"
               onClick={closeLightbox}

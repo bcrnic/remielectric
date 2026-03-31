@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Zap, Phone, Mail, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -15,21 +18,20 @@ const Footer = () => {
               <span className="font-display font-bold text-xl">REMIELECTRIC</span>
             </Link>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Profesionalne elektro instalacije za vaš dom i posao. Kvalitet i pouzdanost od 2023.
-              godine.
+              {t("footer.companyDesc")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Brzi linkovi</h3>
+            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2">
               {[
-                { name: "Početna", path: "/" },
-                { name: "Usluge", path: "/usluge" },
-                { name: "Galerija", path: "/galerija" },
-                { name: "Zakazivanje", path: "/zakazivanje" },
-                { name: "Kontakt", path: "/kontakt" },
+                { name: t("nav.home"), path: "/" },
+                { name: t("nav.services"), path: "/usluge" },
+                { name: t("nav.gallery"), path: "/galerija" },
+                { name: t("nav.booking"), path: "/zakazivanje" },
+                { name: t("nav.contact"), path: "/kontakt" },
               ].map((link) => (
                 <li key={link.path}>
                   <Link
@@ -45,7 +47,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Kontakt</h3>
+            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.contact")}</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
@@ -77,19 +79,16 @@ const Footer = () => {
 
           {/* Working Hours */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Radno vreme</h3>
+            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.workingHours")}</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li className="flex justify-between">
-                <span>Ponedeljak - Petak</span>
-                <span className="text-accent font-medium">08:00 - 18:00</span>
+              <li>
+                {t("footer.workingDays")}
               </li>
-              <li className="flex justify-between">
-                <span>Subota</span>
-                <span className="text-accent font-medium">09:00 - 14:00</span>
+              <li>
+                {t("footer.saturday")}
               </li>
-              <li className="flex justify-between">
-                <span>Nedelja</span>
-                <span className="text-primary-foreground/60">Zatvoreno</span>
+              <li>
+                {t("footer.sunday")}
               </li>
             </ul>
           </div>
@@ -98,7 +97,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>© 2024 REMIELECTRIC. Sva prava zadržana.</p>
+            <p>© 2024 REMIELECTRIC. {t("footer.rights")}</p>
             <p>Vlasnik: Daniel Crnić | Osnovano: 21.06.2023</p>
           </div>
         </div>

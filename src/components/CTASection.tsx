@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CTASection = () => {
+  const { t } = useTranslation();
   const whatsappNumber = "38163312579";
   const whatsappMessage = encodeURIComponent(
     "Zdravo! Zanima me zakazivanje termina za elektro usluge.",
@@ -24,18 +26,17 @@ const CTASection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-            Potreban vam je <span className="text-accent">električar</span>?
+            {t("cta.title")}
           </h2>
           <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 leading-relaxed">
-            Zakažite termin besplatno i dobijte ponudu za vaš projekat. Naši stručnjaci su tu da vam
-            pomognu sa svim elektro potrebama.
+            {t("cta.subtitle")}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/zakazivanje">
               <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                Zakaži termin besplatno
+                {t("cta.button")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

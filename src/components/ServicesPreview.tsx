@@ -1,53 +1,65 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, Building2, Wrench, Lightbulb, ArrowRight } from "lucide-react";
-
-const services = [
-  {
-    icon: Home,
-    title: "Kućne instalacije",
-    description:
-      "Kompletne elektro instalacije za stambene objekte - od razvodnih tabli do utičnica i prekidača.",
-    features: ["Nova gradnja", "Renoviranje", "Proširenje kapaciteta"],
-  },
-  {
-    icon: Building2,
-    title: "Poslovni objekti",
-    description:
-      "Elektro instalacije za poslovne prostore, kancelarije, lokale i industrijske objekte.",
-    features: ["Kancelarije", "Lokali", "Industrijski objekti"],
-  },
-  {
-    icon: Wrench,
-    title: "Održavanje i popravke",
-    description:
-      "Brze intervencije i redovno održavanje elektro instalacija. Dostupni 7 dana u nedelji.",
-    features: ["Hitne popravke", "Redovni servisi", "Dijagnostika"],
-  },
-  {
-    icon: Lightbulb,
-    title: "LED rasveta",
-    description: "Ugradnja energetski efikasne LED rasvete i pametnih sistema osvetljenja.",
-    features: ["Unutrašnja rasveta", "Spoljna rasveta", "Smart osvetljenje"],
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const ServicesPreview = () => {
+  const { t } = useTranslation();
+  
+  const services = [
+    {
+      icon: Home,
+      title: t("services.list.0.title"),
+      description: t("services.list.0.description"),
+      features: [
+        t("services.list.0.features.0"),
+        t("services.list.0.features.1"),
+        t("services.list.0.features.2")
+      ],
+    },
+    {
+      icon: Building2,
+      title: t("services.list.1.title"),
+      description: t("services.list.1.description"),
+      features: [
+        t("services.list.1.features.0"),
+        t("services.list.1.features.1"),
+        t("services.list.1.features.2")
+      ],
+    },
+    {
+      icon: Wrench,
+      title: t("services.list.2.title"),
+      description: t("services.list.2.description"),
+      features: [
+        t("services.list.2.features.0"),
+        t("services.list.2.features.1"),
+        t("services.list.2.features.2")
+      ],
+    },
+    {
+      icon: Lightbulb,
+      title: t("services.list.3.title"),
+      description: t("services.list.3.description"),
+      features: [
+        t("services.list.3.features.0"),
+        t("services.list.3.features.1"),
+        t("services.list.3.features.2")
+      ],
+    },
+  ];
+
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Naše usluge
+            {t("services.title")}
           </span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-            Profesionalne elektro instalacije
+            {t("services.subtitle")}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Od kućnih instalacija do industrijskih sistema - nudimo kompletne elektro usluge sa
-            garancijom kvaliteta.
-          </p>
         </div>
 
         {/* Services Grid */}
@@ -87,7 +99,7 @@ const ServicesPreview = () => {
         <div className="text-center mt-12">
           <Link to="/usluge">
             <Button variant="default" size="lg" className="group">
-              Sve usluge
+              {t("services.viewAll")}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

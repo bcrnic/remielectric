@@ -1,7 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema, localBusinessSchema } from "@/lib/structuredData";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,15 +48,25 @@ const Contact = () => {
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Početna", url: "https://remielectric.rs" },
+    { name: "Kontakt", url: "https://remielectric.rs/kontakt" },
+  ]);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [breadcrumbs, localBusinessSchema],
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Kontakt - REMIELECTRIC | Električar Novi Sad</title>
-        <meta
-          name="description"
-          content="Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan."
-        />
-      </Helmet>
+      <SEO
+        title="Kontakt - REMIELECTRIC | Električar Novi Sad"
+        description="Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan."
+        keywords="kontakt električar Novi Sad, REMIELECTRIC kontakt, elektro usluge kontakt, Stevana Hristića 5"
+        canonical="https://remielectric.rs/kontakt"
+        structuredData={structuredData}
+      />
 
       <div className="min-h-screen">
         <Navbar />
@@ -284,8 +293,6 @@ const Contact = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
-        <ViberButton />
       </div>
     </>
   );

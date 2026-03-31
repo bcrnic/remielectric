@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -21,7 +19,8 @@ import { format } from "date-fns";
 import { sr } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema } from "@/lib/structuredData";
 
 const serviceTypes = [
   "Kućne elektro instalacije",
@@ -84,12 +83,19 @@ const Booking = () => {
     toast.success("Termin je uspešno zakazan!");
   };
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Početna", url: "https://remielectric.rs" },
+    { name: "Zakazivanje", url: "https://remielectric.rs/zakazivanje" },
+  ]);
+
   if (isSubmitted) {
     return (
       <>
-        <Helmet>
-          <title>Termin Zakazan - REMIELECTRIC</title>
-        </Helmet>
+        <SEO
+          title="Termin Zakazan - REMIELECTRIC"
+          description="Vaš termin je uspešno zakazan. Kontaktiraćemo vas uskoro."
+          noindex={true}
+        />
 
         <div className="min-h-screen">
           <Navbar />
@@ -156,13 +162,13 @@ const Booking = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Zakaži Termin - REMIELECTRIC | Električar Novi Sad</title>
-        <meta
-          name="description"
-          content="Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online."
-        />
-      </Helmet>
+      <SEO
+        title="Zakaži Termin - REMIELECTRIC | Električar Novi Sad"
+        description="Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online."
+        keywords="zakazivanje termina električar, online rezervacija elektro usluge, zakaži termin Novi Sad"
+        canonical="https://remielectric.rs/zakazivanje"
+        structuredData={breadcrumbs}
+      />
 
       <div className="min-h-screen">
         <Navbar />
@@ -359,8 +365,6 @@ const Booking = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
-        <ViberButton />
       </div>
     </>
   );

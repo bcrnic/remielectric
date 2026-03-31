@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "home": "Početna",
+    "services": "Usluge",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "booking": "Zakaži termin"
+  },
+  "hero": {
+    "title": "Profesionalne elektro instalacije u Novom Sadu",
+    "subtitle": "Brzo, kvalitetno i pouzdano. Vaš partner za sve elektro potrebe.",
+    "cta": "Zakaži besplatan pregled",
+    "benefits": {
+      "fast": "Brza i pouzdana usluga",
+      "professional": "Profesionalni električari",
+      "warranty": "Garancija na sve radove"
+    }
+  },
+  "services": {
+    "title": "Naše usluge",
+    "subtitle": "Kompletan spektar elektro usluga za vaš dom i posao",
+    "viewAll": "Pogledaj sve usluge",
+    "pageTitle": "Usluge",
+    "pageSubtitle": "Profesionalne elektro usluge prilagođene vašim potrebama",
+    "ctaTitle": "Sviđa vam se naša ponuda?",
+    "ctaSubtitle": "Kontaktirajte nas i razgovarajte sa nama o vašem projektu. Besplatna procena i savetovanje.",
+    "ctaButton": "Kontaktirajte nas",
+    "list": [
+      {
+        "title": "Kućne instalacije",
+        "description": "Kompletne elektro instalacije za stambene objekte - od razvodnih tabli do utičnica i prekidača.",
+        "features": ["Nova gradnja", "Renoviranje", "Proširenje kapaciteta"]
+      },
+      {
+        "title": "Poslovni objekti",
+        "description": "Elektro instalacije za poslovne prostore, kancelarije, lokale i industrijske objekte.",
+        "features": ["Kancelarije", "Lokali", "Industrijski objekti"]
+      },
+      {
+        "title": "Održavanje i popravke",
+        "description": "Brze intervencije i redovno održavanje elektro instalacija. Dostupni 7 dana u nedelji.",
+        "features": ["Hitne popravke", "Redovni servisi", "Dijagnostika"]
+      },
+      {
+        "title": "LED rasveta",
+        "description": "Ugradnja energetski efikasne LED rasvete i pametnih sistema osvetljenja.",
+        "features": ["Unutrašnja rasveta", "Spoljna rasveta", "Smart osvetljenje"]
+      }
+    ]
+  },
+  "about": {
+    "title": "O nama",
+    "subtitle": "REMIELECTRIC - Vaš pouzdan partner",
+    "description": "Sa dugogodišnjim iskustvom u oblasti elektro instalacija, pružamo profesionalne usluge za stambene i poslovne objekte. Naš tim stručnjaka je tu da reši sve vaše elektro potrebe brzo i efikasno.",
+    "stats": [
+      { "value": "100+", "label": "Zadovoljnih klijenata" },
+      { "value": "10+", "label": "Godina iskustva" },
+      { "value": "24h", "label": "Brza reakcija" },
+      { "value": "100%", "label": "Garancija kvaliteta" }
+    ]
+  },
+  "testimonials": {
+    "title": "Šta kažu naši klijenti",
+    "subtitle": "Zadovoljstvo naših klijenata je naš prioritet",
+    "list": [
+      {
+        "name": "Marko Petrović",
+        "location": "Novi Sad",
+        "rating": 5,
+        "text": "Izuzetno profesionalna usluga! Daniel je brzo došao, dijagnostikovao problem sa razvodnom tablom i sve uredno popravio. Preporučujem svima!",
+        "service": "Popravka razvodne table",
+        "date": "Februar 2024"
+      },
+      {
+        "name": "Ana Jovanović",
+        "location": "Petrovaradin",
+        "rating": 5,
+        "text": "Kompletna renovacija elektro instalacija u stanu. Sve urađeno po dogovoru, čisto i kvalitetno. Cena korektna, bez skrivenih troškova.",
+        "service": "Kućne instalacije",
+        "date": "Januar 2024"
+      },
+      {
+        "name": "Nikola Stojanović",
+        "location": "Novi Sad",
+        "rating": 5,
+        "text": "Ugradnja LED rasvete u celom stanu. Odličan savet oko izbora svetiljki i profesionalna montaža. Veoma zadovoljan!",
+        "service": "LED rasveta",
+        "date": "Decembar 2023"
+      },
+      {
+        "name": "Jelena Nikolić",
+        "location": "Sremska Kamenica",
+        "rating": 5,
+        "text": "Hitna intervencija zbog nestanka struje. Daniel je došao za 30 minuta i rešio problem. Veoma zahvalan na brzoj reakciji!",
+        "service": "Hitna intervencija",
+        "date": "Oktobar 2023"
+      },
+      {
+        "name": "Milan Đorđević",
+        "location": "Futog",
+        "rating": 5,
+        "text": "Elektro ormar za malu proizvodnju. Sve izvedeno po standardima, sa svim potrebnim dozvolama. Preporučujem!",
+        "service": "Poslovni objekti",
+        "date": "Septembar 2023"
+      },
+      {
+        "name": "Milica Radović",
+        "location": "Futog",
+        "rating": 5,
+        "text": "Ugradnja smart home sistema. Daniel je imao strpljenja da mi objasni kako sve funkcioniše. Sada kontrolišem sve sa telefona!",
+        "service": "Smart home",
+        "date": "Septembar 2023"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Često postavljana pitanja",
+    "subtitle": "Odgovori na najčešća pitanja o našim uslugama",
+    "list": [
+      {
+        "question": "Koje oblasti pokrivate?",
+        "answer": "Pokrivamo Novi Sad i okolinu (Petrovaradin, Sremska Kamenica, Futog, Veternik). Za udaljenije lokacije, kontaktirajte nas za dogovor."
+      },
+      {
+        "question": "Da li radite hitne intervencije?",
+        "answer": "Da, dostupni smo 7 dana u nedelji za hitne slučajeve. U slučaju kratkog spoja, nestanka struje ili drugih hitnih problema, pozovite nas na +38163 312 579."
+      },
+      {
+        "question": "Koliko košta procena?",
+        "answer": "Procena je potpuno besplatna i bez obaveza. Dolazimo na licu mesta, pregledamo situaciju i dajemo vam tačnu cenu pre početka radova."
+      },
+      {
+        "question": "Koliko traje ugradnja elektro instalacija?",
+        "answer": "Zavisi od obima posla. Manje intervencije (zamena utičnica, prekidača) traju 1-2 sata. Kompletne instalacije za stan mogu trajati 3-7 dana, zavisno od kvadrature."
+      },
+      {
+        "question": "Da li nudite garanciju na radove?",
+        "answer": "Da, nudimo garanciju na sve izvedene radove. Garancija na instalacije je 2 godine, a na ugrađenu opremu prema specifikaciji proizvođača."
+      },
+      {
+        "question": "Koja je cena ugradnje razvodne table?",
+        "answer": "Cena zavisi od veličine objekta i broja osigurača. Okvirna cena za stan od 50-70m² je 15.000-25.000 RSD sa materijalom. Tačnu cenu dajemo nakon pregleda."
+      },
+      {
+        "question": "Da li mogu da dobijem fakturu?",
+        "answer": "Da, izdajemo fiskalnu potvrdu ili fakturu za sve izvršene radove. Za pravna lica obavezno izdajemo fakturu sa svim potrebnim detaljima."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Spremni za početak?",
+    "subtitle": "Kontaktirajte nas danas i dobijte besplatnu procenu za vaš projekat",
+    "button": "Zakaži besplatan pregled"
+  },
+  "footer": {
+    "company": "O kompaniji",
+    "companyDesc": "REMIELECTRIC pruža profesionalne elektro usluge u Novom Sadu i okolini. Vaš pouzdan partner za sve elektro potrebe.",
+    "quickLinks": "Brzi linkovi",
+    "contact": "Kontakt",
+    "workingHours": "Radno vreme",
+    "workingDays": "Ponedeljak - Petak: 08:00 - 18:00",
+    "saturday": "Subota: 09:00 - 14:00",
+    "sunday": "Nedelja: Zatvoreno",
+    "rights": "Sva prava zadržana."
+  },
+  "contact": {
+    "title": "Kontaktirajte nas",
+    "subtitle": "Javite nam se za sve informacije i zakazivanje termina",
+    "info": "Kontakt informacije",
+    "quickContact": "Brzi kontakt",
+    "location": "Lokacija",
+    "form": {
+      "title": "Pošaljite nam poruku",
+      "name": "Ime i prezime",
+      "email": "Email",
+      "phone": "Telefon",
+      "message": "Poruka",
+      "send": "Pošalji poruku",
+      "sending": "Šaljem...",
+      "success": "Poruka uspešno poslata!",
+      "error": "Greška pri slanju poruke"
+    }
+  },
+  "booking": {
+    "title": "Zakaži termin",
+    "subtitle": "Popunite formu ispod i kontaktiraćemo vas u najkraćem roku",
+    "personalInfo": "Vaši podaci",
+    "service": "Usluga",
+    "serviceType": "Vrsta usluge",
+    "selectService": "Izaberite uslugu",
+    "description": "Opis problema / projekta",
+    "descriptionPlaceholder": "Opišite ukratko šta vam treba...",
+    "dateTime": "Datum i vreme",
+    "preferredDate": "Željeni datum",
+    "selectDate": "Izaberite datum",
+    "preferredTime": "Željeni termin",
+    "selectTime": "Izaberite vreme",
+    "submit": "Zakaži termin besplatno",
+    "submitting": "Zakazujem...",
+    "success": "Termin je zakazan!",
+    "successMessage": "Hvala vam na poverenju. Kontaktiraćemo vas uskoro radi potvrde termina.",
+    "bookingDetails": "Detalji zakazivanja:",
+    "bookNew": "Zakaži novi termin",
+    "noObligation": "Kontaktiraćemo vas telefonom radi potvrde termina. Bez obaveza."
+  },
+  "gallery": {
+    "title": "Galerija radova",
+    "subtitle": "Pogledajte neke od naših završenih projekata. Kvalitet koji govori sam za sebe.",
+    "ctaTitle": "Sviđa vam se naš rad?",
+    "ctaSubtitle": "Kontaktirajte nas i razgovarajte sa nama o vašem projektu. Besplatna procena i savetovanje.",
+    "ctaButton": "Zakaži termin besplatno"
+  },
+  "common": {
+    "loading": "Učitavanje...",
+    "error": "Došlo je do greške",
+    "tryAgain": "Pokušaj ponovo",
+    "backToHome": "Nazad na početnu",
+    "readMore": "Saznaj više",
+    "learnMore": "Saznaj više",
+    "name": "Ime",
+    "date": "Datum",
+    "time": "Termin",
+    "required": "obavezno"
+  }
+}

@@ -1,7 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ViberButton from "@/components/ViberButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -16,7 +14,8 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
 
 const services = [
   {
@@ -130,15 +129,31 @@ const services = [
 ];
 
 const Services = () => {
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Početna", url: "https://remielectric.rs" },
+    { name: "Usluge", url: "https://remielectric.rs/usluge" },
+  ]);
+
+  const servicesStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbs,
+      serviceSchema(
+        "Elektro instalacije",
+        "Kompletne elektro instalacije za stambene i poslovne objekte u Novom Sadu"
+      ),
+    ],
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad</title>
-        <meta
-          name="description"
-          content="Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno."
-        />
-      </Helmet>
+      <SEO
+        title="Usluge - REMIELECTRIC | Elektro Instalacije Novi Sad"
+        description="Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno."
+        keywords="elektro usluge Novi Sad, kućne instalacije, LED rasveta, poslovne instalacije, održavanje elektro instalacija"
+        canonical="https://remielectric.rs/usluge"
+        structuredData={servicesStructuredData}
+      />
 
       <div className="min-h-screen">
         <Navbar />
@@ -230,8 +245,6 @@ const Services = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
-        <ViberButton />
       </div>
     </>
   );

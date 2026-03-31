@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const base = import.meta.env.BASE_URL;
 const heroImage = `${base.endsWith("/") ? base : `${base}/`}pro_electrician.png`;
 
 const HeroSection = () => {
-  const benefits = ["Brza i pouzdana usluga", "Licencirani električari", "Garancija na sve radove"];
+  const { t } = useTranslation();
+  
+  const benefits = [
+    t("hero.benefits.fast"),
+    t("hero.benefits.professional"),
+    t("hero.benefits.warranty")
+  ];
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -27,14 +34,12 @@ const HeroSection = () => {
 
           {/* Heading */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-            Vaš pouzdani <span className="text-gradient">električar</span>
-            <br />u Novom Sadu
+            {t("hero.title")}
           </h1>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed">
-            REMIELECTRIC pruža profesionalne elektro instalacije za stambene i poslovne objekte.
-            Kvalitetna usluga, fer cene i garancija na sve radove.
+            {t("hero.subtitle")}
           </p>
 
           {/* Benefits */}
@@ -51,13 +56,13 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/zakazivanje">
               <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                Zakaži termin besplatno
+                {t("hero.cta")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/usluge">
               <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
-                Pogledaj usluge
+                {t("services.viewAll")}
               </Button>
             </Link>
           </div>

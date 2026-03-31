@@ -2,16 +2,20 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Zap, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { name: "Početna", path: "/" },
-    { name: "Usluge", path: "/usluge" },
-    { name: "Galerija", path: "/galerija" },
-    { name: "Kontakt", path: "/kontakt" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.services"), path: "/usluge" },
+    { name: t("nav.gallery"), path: "/galerija" },
+    { name: t("nav.contact"), path: "/kontakt" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -46,7 +50,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button Desktop */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2">
             <a
               href="tel:+38163312579"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -54,9 +58,11 @@ const Navbar = () => {
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">+38163 312 579</span>
             </a>
+            <ThemeToggle />
+            <LanguageSwitcher />
             <Link to="/zakazivanje">
               <Button variant="electric" size="lg">
-                Zakaži termin
+                {t("nav.booking")}
               </Button>
             </Link>
           </div>
