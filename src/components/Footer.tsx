@@ -103,7 +103,6 @@ const Footer = () => {
             <p>
               © {new Date().getFullYear()} REMIELECTRIC. {t("footer.rights")}
             </p>
-            <p>Vlasnik: Daniel Crnić</p>
           </div>
         </div>
       </div>
