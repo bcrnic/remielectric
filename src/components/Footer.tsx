@@ -100,8 +100,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>© 2024 REMIELECTRIC. {t("footer.rights")}</p>
-            <p>Vlasnik: Daniel Crnić | Osnovano: 21.06.2023</p>
+            <p>
+              © {new Date().getFullYear()} REMIELECTRIC. {t("footer.rights")}
+            </p>
+            <p>Vlasnik: Daniel Crnić</p>
           </div>
         </div>
       </div>
