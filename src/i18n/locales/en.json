@@ -7,16 +7,26 @@
     "booking": "Book Appointment"
   },
   "hero": {
-    "title": "Professional Electrical Installations in Novi Sad",
-    "subtitle": "Fast, quality, and reliable. Your partner for all electrical needs.",
-    "cta": "Schedule Free Inspection",
-    "badge": "Active since 2023 · Novi Sad",
+    "cta": "Free inspection",
     "imageAlt": "Electrician at work",
-    "benefits": {
-      "fast": "Fast and reliable service",
-      "professional": "Professional electricians",
-      "warranty": "Warranty on all work"
-    }
+    "secondary": "See our services",
+    "prev": "Previous slide",
+    "next": "Next slide",
+    "goTo": "Slide",
+    "slides": [
+      {
+        "title": "Safe power in every home",
+        "subtitle": "Professional electrical installations, repairs and lighting for apartments, houses and businesses in Novi Sad."
+      },
+      {
+        "title": "Tidy installations, clear prices",
+        "subtitle": "Free inspection and an exact price before any work starts. Invoice and warranty for every job."
+      },
+      {
+        "title": "Smart homes and modern lighting",
+        "subtitle": "LED lighting and smart systems you control from your phone."
+      }
+    ]
   },
   "services": {
     "title": "Our Services",
@@ -40,8 +50,8 @@
       },
       {
         "title": "Maintenance & Repairs",
-        "description": "Quick interventions and regular maintenance of electrical installations. Available 7 days a week.",
-        "features": ["Emergency repairs", "Regular services", "Diagnostics"]
+        "description": "Regular maintenance, diagnostics and repairs of electrical installations.",
+        "features": ["Fault repairs", "Regular services", "Diagnostics"]
       },
       {
         "title": "LED Lighting",
@@ -92,18 +102,30 @@
           "Voice control"
         ]
       }
-    ]
+    ],
+    "headline": "Everything for your installation",
+    "customTitle": "Don't see your service?",
+    "customText": "Send us a description of the job and we'll get back to you with an estimate.",
+    "customButton": "Contact us"
   },
   "about": {
     "title": "About Us",
-    "subtitle": "REMIELECTRIC - Your Reliable Partner",
-    "description": "With years of experience in electrical installations, we provide professional services for residential and commercial properties. Our team of experts is here to solve all your electrical needs quickly and efficiently.",
-    "description2": "We take pride in our meticulous approach, adherence to deadlines, and application of the latest safety standards. Whether it's a simple socket replacement or installing a complete system, we approach every job with the same level of dedication.",
+    "subtitle": "Experience you can see in every connection",
+    "description": "Daniel has worked as an electrician for more than ten years. He founded REMIELECTRIC in 2023 to offer clients reliable, tidy work directly, with no middlemen. Today, together with Srđan, he covers Novi Sad, Petrovaradin, Sremska Kamenica, Futog and the surrounding area.",
+    "description2": "Every job, from replacing a socket to a complete installation, is done to standard, with an invoice and a warranty.",
     "stats": [
-      { "value": "100+", "label": "Satisfied clients" },
-      { "value": "10+", "label": "Years of experience" },
-      { "value": "24h", "label": "Quick response" },
-      { "value": "100%", "label": "Quality guarantee" }
+      {
+        "value": "10+",
+        "label": "years in the trade"
+      },
+      {
+        "value": "2023",
+        "label": "company founded"
+      },
+      {
+        "value": "0 RSD",
+        "label": "inspection and estimate"
+      }
     ]
   },
   "testimonials": {
@@ -135,14 +157,6 @@
         "date": "December 2023"
       },
       {
-        "name": "Jelena Nikolić",
-        "location": "Sremska Kamenica",
-        "rating": 5,
-        "text": "Emergency intervention due to power outage. Daniel arrived within 30 minutes and solved the problem. Very grateful for the quick response!",
-        "service": "Emergency intervention",
-        "date": "October 2023"
-      },
-      {
         "name": "Milan Đorđević",
         "location": "Futog",
         "rating": 5,
@@ -168,7 +182,6 @@
         "question": "Which areas do you cover?",
         "answer": "We cover Novi Sad and surrounding areas (Petrovaradin, Sremska Kamenica, Futog, Veternik). For more distant locations, contact us for arrangements."
       },
-
       {
         "question": "How much does an estimate cost?",
         "answer": "The estimate is completely free and without obligation. We come to the site, examine the situation and give you an exact price before starting the work."
@@ -177,7 +190,6 @@
         "question": "How long does electrical installation take?",
         "answer": "It depends on the scope of work. Minor interventions (outlet, switch replacement) take 1-2 hours. Complete installations for an apartment can take 3-7 days, depending on the square footage."
       },
-
       {
         "question": "What is the cost of installing a distribution board?",
         "answer": "The price depends on the size of the property and the number of circuit breakers. The approximate price for a 50-70m² apartment is 15,000-25,000 RSD with materials. We provide the exact price after inspection."
@@ -189,9 +201,9 @@
     ]
   },
   "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Contact us today and get a free estimate for your project",
-    "button": "Schedule Free Inspection"
+    "title": "Need an electrician?",
+    "subtitle": "Inspection and estimate are free. Call us or book an appointment online.",
+    "button": "Book appointment"
   },
   "footer": {
     "company": "About Company",
@@ -265,7 +277,8 @@
     "name": "Name",
     "date": "Date",
     "time": "Time",
-    "required": "required"
+    "required": "required",
+    "viber": "Message us on Viber"
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -296,5 +309,34 @@
       "title": "Project Gallery - REMIELECTRIC | Electrician Novi Sad",
       "description": "View a gallery of our completed projects. Electrical installations, LED lighting, distribution boards, and more."
     }
+  },
+  "topbar": {
+    "area": "Novi Sad and surroundings",
+    "hours": "Mon–Fri 08–18 · Sat 09–14"
+  },
+  "ribbon": [
+    "Safety first",
+    "Warranty on all work",
+    "Invoice for every job",
+    "Free estimate",
+    "Clean and tidy"
+  ],
+  "process": {
+    "label": "No surprises",
+    "title": "How we work",
+    "steps": [
+      {
+        "title": "Call or book",
+        "text": "By phone, Viber or the online form. We get back to you within 24 hours."
+      },
+      {
+        "title": "Free inspection",
+        "text": "We come to your address, inspect the installation and give you a price before we start."
+      },
+      {
+        "title": "Work with a warranty",
+        "text": "We work tidily, clean up after ourselves and issue an invoice with a warranty."
+      }
+    ]
   }
 }

@@ -24,8 +24,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Manrope", "system-ui", "sans-serif"],
+        sans: ["Barlow", "system-ui", "sans-serif"],
+        display: ['"Barlow Condensed"', '"Arial Narrow"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,6 +60,15 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          deep: "hsl(var(--ink-deep))",
+        },
+        signal: {
+          DEFAULT: "hsl(var(--signal))",
+          dark: "hsl(var(--signal-dark))",
+          text: "hsl(var(--signal-text))",
         },
         electric: {
           blue: "hsl(var(--electric-blue))",

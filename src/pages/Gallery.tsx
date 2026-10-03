@@ -6,15 +6,10 @@ import { Link } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema } from "@/lib/structuredData";
+import { withBase } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
 // Import gallery images
-const withBase = (p: string) => {
-  const base = import.meta.env.BASE_URL;
-  const normalizedBase = base.endsWith("/") ? base : `${base}/`;
-  const normalizedPath = p.startsWith("/") ? p.slice(1) : p;
-  return `${normalizedBase}${normalizedPath}`;
-};
 const placeholderImage = (label: string) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(`
     <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
@@ -32,12 +27,12 @@ const placeholderImage = (label: string) =>
   `)}`;
 
 const galleryImages = [
-  withBase("/distribution_panel.png"),
-  withBase("/gallery-led.jpg"),
-  withBase("/wall_sockets.png"),
-  withBase("/smart_home.png"),
-  withBase("/outdoor_house.png"),
-  withBase("/gallery-industrial.jpg"),
+  withBase("/images/distribution_panel.jpg"),
+  withBase("/images/gallery-led.jpg"),
+  withBase("/images/wall_sockets.jpg"),
+  withBase("/images/smart_home.jpg"),
+  withBase("/images/outdoor_house.jpg"),
+  withBase("/images/gallery-industrial.jpg"),
 ];
 
 const Gallery = () => {
@@ -101,7 +96,7 @@ const Gallery = () => {
       <div className="min-h-screen">
         <Navbar />
 
-        <main className="pt-20">
+        <main>
           {/* Hero */}
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">

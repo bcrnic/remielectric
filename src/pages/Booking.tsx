@@ -96,11 +96,11 @@ const Booking = () => {
 
         <div className="min-h-screen">
           <Navbar />
-          <main className="pt-20 min-h-[80vh] flex items-center">
+          <main className="min-h-[80vh] flex items-center">
             <div className="container mx-auto px-4 py-16">
               <div className="max-w-md mx-auto text-center">
                 <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-accent" />
+                  <CheckCircle2 className="w-10 h-10 text-signal-text" />
                 </div>
                 <h1 className="font-display text-3xl font-bold text-foreground mb-4">
                   {t("booking.success")}
@@ -174,7 +174,7 @@ const Booking = () => {
       <div className="min-h-screen">
         <Navbar />
 
-        <main className="pt-20">
+        <main>
           {/* Hero */}
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">

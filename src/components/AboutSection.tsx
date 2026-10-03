@@ -1,56 +1,52 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Clock, Award, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { withBase } from "@/lib/utils";
 
 const AboutSection = () => {
   const { t } = useTranslation();
 
-  const stats = [
-    { icon: Users, value: t("about.stats.0.value"), label: t("about.stats.0.label") },
-    { icon: Award, value: t("about.stats.1.value"), label: t("about.stats.1.label") },
-    { icon: Clock, value: t("about.stats.2.value"), label: t("about.stats.2.label") },
-    { icon: Shield, value: t("about.stats.3.value"), label: t("about.stats.3.label") },
-  ];
+  const stats = t("about.stats", { returnObjects: true }) as Array<{
+    value: string;
+    label: string;
+  }>;
 
   return (
-    <section className="py-20 md:py-28 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
+    <section className="relative overflow-hidden bg-ink text-white">
+      <img
+        src={withBase("/images/distribution_panel.jpg")}
+        alt=""
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover opacity-25"
+      />
+      <div className="container mx-auto px-4 relative py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            <span className="text-signal font-bold text-sm uppercase tracking-[0.2em]">
               {t("about.title")}
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
+            <h2 className="font-display text-4xl md:text-6xl font-extrabold uppercase leading-none mt-3 mb-6 [text-wrap:balance]">
               {t("about.subtitle")}
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-white/80 text-lg leading-relaxed max-w-xl">
               <p>{t("about.description")}</p>
               <p>{t("about.description2")}</p>
             </div>
-
-            <Link to="/kontakt" className="inline-block mt-8">
-              <Button variant="default" size="lg">
-                {t("services.ctaButton")}
-              </Button>
-            </Link>
+            <Button asChild variant="hero-outline" size="lg" className="mt-8">
+              <Link to="/kontakt">{t("services.ctaButton")}</Link>
+            </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-4">
+            {stats.map((stat) => (
               <div
-                key={index}
-                className="bg-card rounded-2xl p-6 border border-border text-center hover:shadow-md transition-shadow"
+                key={stat.label}
+                className="rounded-xl border border-white/15 bg-white/[0.06] backdrop-blur-sm p-6"
               >
-                <div className="w-12 h-12 rounded-xl bg-electric-blue-light flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="font-display text-3xl md:text-4xl font-bold text-primary mb-1">
+                <div className="font-display font-extrabold text-5xl md:text-6xl leading-none text-signal">
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-white/80 mt-2">{stat.label}</div>
               </div>
             ))}
           </div>

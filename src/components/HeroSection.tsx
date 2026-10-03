@@ -1,82 +1,133 @@
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { cn, withBase } from "@/lib/utils";
 
-const base = import.meta.env.BASE_URL;
-const heroImage = `${base.endsWith("/") ? base : `${base}/`}pro_electrician.png`;
+const slideImages = [
+  withBase("/images/pro_electrician.jpg"),
+  withBase("/images/distribution_panel.jpg"),
+  withBase("/images/smart_home.jpg"),
+];
+
+const AUTOPLAY_MS = 7000;
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const slides = t("hero.slides", { returnObjects: true }) as Array<{
+    title: string;
+    subtitle: string;
+  }>;
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const benefits = [
-    t("hero.benefits.fast"),
-    t("hero.benefits.professional"),
-    t("hero.benefits.warranty"),
-  ];
+  const go = useCallback(
+    (delta: number) => setActive((i) => (i + delta + slides.length) % slides.length),
+    [slides.length],
+  );
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (paused || reduceMotion) return;
+    const id = window.setInterval(() => go(1), AUTOPLAY_MS);
+    return () => window.clearInterval(id);
+  }, [paused, go]);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+    <section
+      className="relative min-h-[560px] md:min-h-[640px] flex items-center overflow-hidden bg-ink"
+      aria-roledescription="carousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
+      {/* Background images */}
+      {slideImages.map((src, index) => (
         <img
-          src={heroImage}
-          alt={t("hero.imageAlt", "Električar na poslu")}
-          className="w-full h-full object-cover"
+          key={src}
+          src={src}
+          alt={index === 0 ? t("hero.imageAlt") : ""}
+          aria-hidden={index !== 0}
+          loading={index === 0 ? "eager" : "lazy"}
+          className={cn(
+            "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000",
+            index === active ? "opacity-100" : "opacity-0",
+          )}
         />
-        <div className="absolute inset-0 gradient-overlay" />
-      </div>
+      ))}
+      <div className="absolute inset-0 gradient-overlay" />
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl animate-slide-up">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-accent font-medium text-sm">
-              {t("hero.badge", "Aktivni od 2023 · Novi Sad")}
-            </span>
-          </div>
+      <div className="container mx-auto px-4 md:px-20 relative z-10 py-20">
+        <div className="grid">
+          {slides.map((slide, index) => {
+            const Heading = index === 0 ? "h1" : "h2";
+            return (
+              <div
+                key={index}
+                aria-hidden={index !== active}
+                className={cn(
+                  "[grid-area:1/1] max-w-3xl transition-all duration-700",
+                  index === active
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4 pointer-events-none",
+                )}
+              >
+                <Heading className="font-display font-extrabold uppercase text-signal text-5xl md:text-7xl lg:text-8xl leading-[0.95] mb-6 [text-wrap:balance]">
+                  {slide.title}
+                </Heading>
+                <p className="text-white text-xl md:text-2xl font-semibold leading-snug max-w-2xl mb-10">
+                  {slide.subtitle}
+                </p>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Heading */}
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-            {t("hero.title")}
-          </h1>
-
-          {/* Description */}
-          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed">
-            {t("hero.subtitle")}
-          </p>
-
-          {/* Benefits */}
-          <ul className="flex flex-col sm:flex-row gap-4 mb-10">
-            {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center gap-2 text-primary-foreground/90">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                <span className="text-sm font-medium">{benefit}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/zakazivanje">
-              <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                {t("hero.cta")}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/usluge">
-              <Button variant="hero-outline" size="xl" className="w-full sm:w-auto">
-                {t("services.viewAll")}
-              </Button>
-            </Link>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
+            <Link to="/zakazivanje">{t("hero.cta")}</Link>
+          </Button>
+          <Button asChild variant="hero-outline" size="xl" className="w-full sm:w-auto">
+            <Link to="/usluge">{t("hero.secondary")}</Link>
+          </Button>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Controls */}
+      <button
+        type="button"
+        onClick={() => go(-1)}
+        aria-label={t("hero.prev")}
+        className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/85 hover:bg-white items-center justify-center text-ink transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        type="button"
+        onClick={() => go(1)}
+        aria-label={t("hero.next")}
+        className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white/85 hover:bg-white items-center justify-center text-ink transition-colors"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => setActive(index)}
+            aria-label={`${t("hero.goTo")} ${index + 1}`}
+            aria-current={index === active}
+            className={cn(
+              "h-2 rounded-full transition-all",
+              index === active ? "w-7 bg-signal" : "w-2 bg-white/60 hover:bg-white",
+            )}
+          />
+        ))}
+      </div>
     </section>
   );
 };

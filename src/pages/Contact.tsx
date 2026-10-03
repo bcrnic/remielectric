@@ -64,7 +64,7 @@ const Contact = () => {
       <div className="min-h-screen">
         <Navbar />
 
-        <main className="pt-20">
+        <main>
           {/* Hero */}
           <section className="py-12 md:py-16 bg-primary">
             <div className="container mx-auto px-4 text-center">

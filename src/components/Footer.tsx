@@ -1,30 +1,29 @@
 import { Link } from "react-router-dom";
-import { Zap, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import BrandMark from "@/components/BrandMark";
+import { contactLinks } from "@/lib/utils";
 
 const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-ink-deep text-white/70">
+      <div className="container mx-auto px-4 py-14 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <span className="font-display font-bold text-xl">REMIELECTRIC</span>
+            <Link to="/" aria-label="REMIELECTRIC" className="inline-block">
+              <BrandMark tone="dark" />
             </Link>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              {t("footer.companyDesc")}
-            </p>
+            <p className="text-sm leading-relaxed">{t("footer.companyDesc")}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.quickLinks")}</h3>
+            <h3 className="font-display font-bold uppercase tracking-wide text-xl text-white mb-4">
+              {t("footer.quickLinks")}
+            </h3>
             <ul className="space-y-2">
               {[
                 { name: t("nav.home"), path: "/" },
@@ -34,10 +33,7 @@ const Footer = () => {
                 { name: t("nav.contact"), path: "/kontakt" },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                  >
+                  <Link to={link.path} className="text-sm hover:text-signal transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -47,40 +43,36 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.contact")}</h3>
-            <ul className="space-y-3">
+            <h3 className="font-display font-bold uppercase tracking-wide text-xl text-white mb-4">
+              {t("footer.contact")}
+            </h3>
+            <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/80 text-sm">
+                <MapPin className="w-5 h-5 text-signal mt-0.5 flex-shrink-0" />
+                <span>
                   Stevana Hristića 5<br />
                   21000 Novi Sad, Srbija
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+38163312579"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                >
-                  Daniel: 063 312 579
+                <Phone className="w-5 h-5 text-signal flex-shrink-0" />
+                <a href={contactLinks.danielTel} className="hover:text-signal transition-colors">
+                  Daniel: {contactLinks.danielPhone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+381606301113"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                >
-                  Srđan: 060 630 1113
+                <Phone className="w-5 h-5 text-signal flex-shrink-0" />
+                <a href={contactLinks.srdjanTel} className="hover:text-signal transition-colors">
+                  Srđan: {contactLinks.srdjanPhone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-accent flex-shrink-0" />
+                <Mail className="w-5 h-5 text-signal flex-shrink-0" />
                 <a
-                  href="mailto:info@remielectric.rs"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                  href={`mailto:${contactLinks.email}`}
+                  className="hover:text-signal transition-colors"
                 >
-                  info@remielectric.rs
+                  {contactLinks.email}
                 </a>
               </li>
             </ul>
@@ -88,22 +80,21 @@ const Footer = () => {
 
           {/* Working Hours */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">{t("footer.workingHours")}</h3>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <h3 className="font-display font-bold uppercase tracking-wide text-xl text-white mb-4">
+              {t("footer.workingHours")}
+            </h3>
+            <ul className="space-y-2 text-sm">
               <li>{t("footer.workingDays")}</li>
               <li>{t("footer.saturday")}</li>
               <li>{t("footer.sunday")}</li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>
-              © {new Date().getFullYear()} REMIELECTRIC. {t("footer.rights")}
-            </p>
-          </div>
+      <div className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-5 text-sm text-white/50">
+          © {new Date().getFullYear()} REMIELECTRIC. {t("footer.rights")}
         </div>
       </div>
     </footer>

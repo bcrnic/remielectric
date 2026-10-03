@@ -18,16 +18,16 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Custom REMIELECTRIC variants
         electric:
-          "bg-accent text-accent-foreground hover:bg-electric-yellow-dark shadow-electric hover:shadow-electric-lg font-bold",
-        hero: "bg-accent text-accent-foreground hover:bg-electric-yellow-dark shadow-electric hover:shadow-electric-lg font-bold text-lg",
+          "bg-signal text-ink hover:bg-signal-dark shadow-electric hover:shadow-electric-lg font-bold uppercase tracking-wide",
+        hero: "bg-signal text-ink hover:bg-signal-dark shadow-electric hover:shadow-electric-lg font-bold uppercase tracking-wide rounded-full",
         "hero-outline":
-          "border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-lg",
+          "border-2 border-signal bg-transparent text-white hover:bg-signal hover:text-ink font-bold uppercase tracking-wide rounded-full",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-xl px-10 text-lg",
+        xl: "h-14 px-9 text-base",
         icon: "h-10 w-10",
       },
     },

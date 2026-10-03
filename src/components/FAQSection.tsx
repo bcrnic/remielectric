@@ -20,9 +20,9 @@ const FAQSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-electric-blue-light mb-4">
-            <HelpCircle className="w-8 h-8 text-primary" />
+            <HelpCircle className="w-8 h-8 text-ink dark:text-signal" />
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-4xl md:text-6xl font-extrabold uppercase leading-none text-foreground mb-4">
             {t("faq.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t("faq.subtitle")}</p>
@@ -53,7 +53,7 @@ const FAQSection = () => {
           </p>
           <a
             href="tel:+38163312579"
-            className="inline-flex items-center gap-2 text-primary hover:text-electric-blue-dark font-semibold transition-colors"
+            className="inline-flex items-center gap-2 text-foreground underline decoration-signal decoration-2 underline-offset-4 font-semibold"
           >
             {t("faq.callUs", "Pozovite nas: ")} 063 312 579
           </a>

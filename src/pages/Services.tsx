@@ -71,7 +71,7 @@ const Services = () => {
       <div className="min-h-screen">
         <Navbar />
 
-        <main className="pt-20">
+        <main>
           {/* Hero */}
           <section className="py-16 md:py-24 bg-primary">
             <div className="container mx-auto px-4 text-center">
@@ -103,7 +103,7 @@ const Services = () => {
                           <h2 className="font-display font-semibold text-xl text-foreground mb-1">
                             {service.title}
                           </h2>
-                          <span className="text-accent font-semibold text-sm">
+                          <span className="text-signal-text font-semibold text-sm">
                             {servicePrices[index]}
                           </span>
                         </div>

@@ -3,9 +3,12 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ServicesPreview from "@/components/ServicesPreview";
 import AboutSection from "@/components/AboutSection";
+import BenefitsRibbon from "@/components/BenefitsRibbon";
+import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import ViberButton from "@/components/ViberButton";
 import SEO from "@/components/SEO";
 import { organizationSchema, websiteSchema } from "@/lib/structuredData";
 import { useTranslation } from "react-i18next";
@@ -36,11 +39,14 @@ const Index = () => {
           <HeroSection />
           <ServicesPreview />
           <AboutSection />
+          <BenefitsRibbon />
+          <ProcessSection />
           <TestimonialsSection />
           <FAQSection />
           <CTASection />
         </main>
         <Footer />
+        <ViberButton />
       </div>
     </>
   );
