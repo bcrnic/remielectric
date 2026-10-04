@@ -111,7 +111,7 @@
   "about": {
     "title": "O nama",
     "subtitle": "Iskustvo koje se vidi u svakom spoju",
-    "description": "Daniel radi kao električar više od deset godina. REMIELECTRIC je osnovao 2023. kako bi klijentima direktno pružio pouzdan i uredan rad, bez posrednika. Danas, zajedno sa Srđanom, pokriva Novi Sad, Petrovaradin, Sremsku Kamenicu, Futog i okolinu.",
+    "description": "Daniel radi kao električar više od deset godina. REMIELECTRIC je osnovao 2021. kako bi klijentima direktno pružio pouzdan i uredan rad, bez posrednika. Danas, zajedno sa Srđanom, pokriva Novi Sad, Petrovaradin, Sremsku Kamenicu, Futog i okolinu.",
     "description2": "Svaki posao, od zamene utičnice do kompletne instalacije, radimo po standardima, sa fakturom i garancijom.",
     "stats": [
       {
@@ -119,7 +119,7 @@
         "label": "godina u struci"
       },
       {
-        "value": "2023",
+        "value": "2021",
         "label": "osnovana firma"
       },
       {

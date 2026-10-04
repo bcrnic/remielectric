@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" aria-label="REMIELECTRIC" className="inline-block">
-              <BrandMark tone="dark" />
+              <BrandMark tone="dark" badgeClassName="h-20 md:h-20" />
             </Link>
             <p className="text-sm leading-relaxed">{t("footer.companyDesc")}</p>
           </div>

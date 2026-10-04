@@ -3,13 +3,23 @@
   "short_name": "REMIELECTRIC",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#0B1F4B",
-  "theme_color": "#1E40AF",
+  "background_color": "#141518",
+  "theme_color": "#1E1F22",
   "icons": [
     {
-      "src": "placeholder.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "brand/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any"
     }
   ]

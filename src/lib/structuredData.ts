@@ -41,7 +41,7 @@ export const organizationSchema = {
     "@type": "Person",
     name: "Daniel Crnić",
   },
-  foundingDate: "2023-06-21",
+  foundingDate: "2021",
   areaServed: {
     "@type": "City",
     name: "Novi Sad",

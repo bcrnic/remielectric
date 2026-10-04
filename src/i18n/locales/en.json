@@ -111,7 +111,7 @@
   "about": {
     "title": "About Us",
     "subtitle": "Experience you can see in every connection",
-    "description": "Daniel has worked as an electrician for more than ten years. He founded REMIELECTRIC in 2023 to offer clients reliable, tidy work directly, with no middlemen. Today, together with Srđan, he covers Novi Sad, Petrovaradin, Sremska Kamenica, Futog and the surrounding area.",
+    "description": "Daniel has worked as an electrician for more than ten years. He founded REMIELECTRIC in 2021 to offer clients reliable, tidy work directly, with no middlemen. Today, together with Srđan, he covers Novi Sad, Petrovaradin, Sremska Kamenica, Futog and the surrounding area.",
     "description2": "Every job, from replacing a socket to a complete installation, is done to standard, with an invoice and a warranty.",
     "stats": [
       {
@@ -119,7 +119,7 @@
         "label": "years in the trade"
       },
       {
-        "value": "2023",
+        "value": "2021",
         "label": "company founded"
       },
       {

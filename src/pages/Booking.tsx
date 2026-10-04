@@ -16,7 +16,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { CalendarIcon, Clock, CheckCircle2, Loader2 } from "lucide-react";
 import { format } from "date-fns";
-import { sr } from "date-fns/locale";
+import { ru, srLatn } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
@@ -38,6 +38,7 @@ const Booking = () => {
   const serviceTypes = [...servicesList.map((s) => s.title), t("booking.other", "Drugo")];
 
   const [date, setDate] = useState<Date>();
+  const dateLocale = i18n.language === "en" ? undefined : i18n.language === "ru" ? ru : srLatn;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -118,8 +119,7 @@ const Booking = () => {
                     <li className="flex justify-between">
                       <span className="text-muted-foreground">{t("common.date")}:</span>
                       <span className="font-medium">
-                        {date &&
-                          format(date, "PPP", { locale: i18n.language === "en" ? undefined : sr })}
+                        {date && format(date, "PPP", { locale: dateLocale })}
                       </span>
                     </li>
                     <li className="flex justify-between">
@@ -300,7 +300,7 @@ const Booking = () => {
                               <CalendarIcon className="mr-2 h-4 w-4" />
                               {date
                                 ? format(date, "PPP", {
-                                    locale: i18n.language === "en" ? undefined : sr,
+                                    locale: dateLocale,
                                   })
                                 : t("booking.selectDate")}
                             </Button>

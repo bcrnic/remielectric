@@ -22,6 +22,14 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 relative py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
+            <img
+              src={withBase("/brand/logo-512.png")}
+              alt="REMI ELECTRIC"
+              width={512}
+              height={512}
+              loading="lazy"
+              className="w-32 md:w-40 h-auto mb-8"
+            />
             <span className="text-signal font-bold text-sm uppercase tracking-[0.2em]">
               {t("about.title")}
             </span>
