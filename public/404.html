@@ -7,7 +7,7 @@
     <script>
       (function () {
         var path = location.pathname;
-        var base = "/remielectric";
+        var base = "%BASE_PATH%";
         if (path.indexOf(base) === 0) {
           path = path.slice(base.length);
         }

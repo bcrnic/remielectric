@@ -5,39 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REMIELECTRIC - Električar Novi Sad | Elektro Instalacije</title>
     <meta
+      data-rh="true"
       name="description"
       content="REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!"
     />
     <meta
+      data-rh="true"
       name="keywords"
       content="električar Novi Sad, elektro instalacije, električne instalacije Novi Sad, električar, REMIELECTRIC, Daniel Crnić"
     />
-    <meta name="author" content="REMIELECTRIC" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://remielectric.rs" />
+    <meta data-rh="true" name="author" content="REMIELECTRIC" />
+    <meta data-rh="true" name="robots" content="index, follow" />
+    <link data-rh="true" rel="canonical" href="%SITE_URL%/" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://remielectric.rs/" />
-    <meta property="og:title" content="REMIELECTRIC - Električar Novi Sad" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:url" content="%SITE_URL%/" />
+    <meta data-rh="true" property="og:title" content="REMIELECTRIC - Električar Novi Sad" />
     <meta
+      data-rh="true"
       property="og:description"
       content="Profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta."
     />
-    <meta property="og:image" content="https://remielectric.rs/og-image.jpg" />
-    <meta property="og:locale" content="sr_RS" />
+    <meta data-rh="true" property="og:image" content="%SITE_URL%/og-image.jpg" />
+    <meta data-rh="true" property="og:locale" content="sr_RS" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="REMIELECTRIC - Električar Novi Sad" />
-    <meta name="twitter:description" content="Profesionalne elektro instalacije u Novom Sadu." />
-    <meta name="twitter:image" content="https://remielectric.rs/og-image.jpg" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:title" content="REMIELECTRIC - Električar Novi Sad" />
+    <meta
+      data-rh="true"
+      name="twitter:description"
+      content="Profesionalne elektro instalacije u Novom Sadu."
+    />
+    <meta data-rh="true" name="twitter:image" content="%SITE_URL%/og-image.jpg" />
 
     <!-- Geo Tags -->
-    <meta name="geo.region" content="RS-VO" />
-    <meta name="geo.placename" content="Novi Sad" />
-    <meta name="geo.position" content="45.2471495;19.8380483" />
-    <meta name="ICBM" content="45.2471495, 19.8380483" />
+    <meta data-rh="true" name="geo.region" content="RS-VO" />
+    <meta data-rh="true" name="geo.placename" content="Novi Sad" />
+    <meta data-rh="true" name="geo.position" content="45.2471495;19.8380483" />
+    <meta data-rh="true" name="ICBM" content="45.2471495, 19.8380483" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -52,7 +59,7 @@
         "@type": "Electrician",
         "name": "REMIELECTRIC",
         "description": "Profesionalne elektro instalacije u Novom Sadu",
-        "url": "https://remielectric.rs",
+        "url": "%SITE_URL%",
         "telephone": "+38163312579",
         "email": "info@remielectric.rs",
         "address": {
@@ -100,7 +107,8 @@
       }
     </script>
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics (removed at build time when VITE_GA_MEASUREMENT_ID is unset) -->
+    <!-- ga:start -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_MEASUREMENT_ID%"
@@ -113,6 +121,7 @@
       gtag("js", new Date());
       gtag("config", "%VITE_GA_MEASUREMENT_ID%");
     </script>
+    <!-- ga:end -->
   </head>
 
   <body>

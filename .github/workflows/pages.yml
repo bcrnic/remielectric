@@ -40,6 +40,8 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_URL: /remielectric/
+          # Change both values when a custom domain is connected (base "/")
+          VITE_SITE_URL: https://bcrnic.github.io/remielectric
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

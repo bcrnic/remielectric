@@ -1,8 +1,7 @@
 # REMIELECTRIC - Robots.txt
-# https://remielectric.rs
 
 # Sitemap
-Sitemap: https://remielectric.rs/sitemap.xml
+Sitemap: %SITE_URL%/sitemap.xml
 
 # Google
 User-agent: Googlebot

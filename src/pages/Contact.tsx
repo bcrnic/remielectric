@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/structuredData";
+import { pageUrl } from "@/lib/site";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -39,8 +40,8 @@ const Contact = () => {
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: t("nav.home"), url: "https://remielectric.rs" },
-    { name: t("nav.contact"), url: "https://remielectric.rs/kontakt" },
+    { name: t("nav.home"), url: pageUrl("/") },
+    { name: t("nav.contact"), url: pageUrl("/kontakt") },
   ]);
 
   const structuredData = {
@@ -57,7 +58,7 @@ const Contact = () => {
           "Kontaktirajte REMIELECTRIC za sve elektro usluge. Adresa: Stevana Hristića 5, 21000 Novi Sad. Brz odgovor garantovan.",
         )}
         keywords="kontakt električar Novi Sad, REMIELECTRIC kontakt, elektro usluge kontakt, Stevana Hristića 5"
-        canonical="https://remielectric.rs/kontakt"
+        canonical={pageUrl("/kontakt")}
         structuredData={structuredData}
       />
 

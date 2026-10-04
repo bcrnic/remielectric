@@ -3,12 +3,14 @@
  * https://schema.org/
  */
 
+import { pageUrl } from "@/lib/site";
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Electrician",
   name: "REMIELECTRIC",
   description: "Profesionalne elektro instalacije u Novom Sadu",
-  url: "https://remielectric.rs",
+  url: pageUrl("/"),
   telephone: "+38163312579",
   email: "info@remielectric.rs",
   address: {
@@ -53,17 +55,17 @@ export const organizationSchema = {
     "LED Lighting",
     "Smart Home Installation",
   ],
-  image: "https://remielectric.rs/og-image.jpg",
-  logo: "https://remielectric.rs/logo.png",
+  image: pageUrl("/og-image.jpg"),
+  logo: pageUrl("/brand/logo-512.png"),
   sameAs: ["https://www.facebook.com/remielectric", "https://www.instagram.com/remielectric"],
 };
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://remielectric.rs",
+  "@id": pageUrl("/"),
   name: "REMIELECTRIC",
-  image: "https://remielectric.rs/og-image.jpg",
+  image: pageUrl("/og-image.jpg"),
   telephone: "+38163312579",
   email: "info@remielectric.rs",
   address: {
@@ -79,7 +81,7 @@ export const localBusinessSchema = {
     latitude: 45.2471495,
     longitude: 19.8380483,
   },
-  url: "https://remielectric.rs",
+  url: pageUrl("/"),
   priceRange: "$$",
   openingHoursSpecification: [
     {
@@ -117,7 +119,7 @@ export const serviceSchema = (serviceName: string, description: string, price?: 
     "@type": "Electrician",
     name: "REMIELECTRIC",
     telephone: "+38163312579",
-    url: "https://remielectric.rs",
+    url: pageUrl("/"),
   },
   areaServed: {
     "@type": "City",
@@ -184,10 +186,5 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "REMIELECTRIC",
-  url: "https://remielectric.rs",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://remielectric.rs/usluge?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
+  url: pageUrl("/"),
 };

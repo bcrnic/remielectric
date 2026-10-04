@@ -27,3 +27,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Marketing assets kept next to the site, not part of it
+REMIELECTRIC-instagram/
+REMIELECTRIC-logo/
+remielectric clean photos /
+remi.pdf

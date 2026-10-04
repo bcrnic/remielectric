@@ -22,6 +22,7 @@ import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema } from "@/lib/structuredData";
+import { pageUrl } from "@/lib/site";
 
 const timeSlots = [
   "08:00 - 10:00",
@@ -79,8 +80,8 @@ const Booking = () => {
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: t("nav.home"), url: "https://remielectric.rs" },
-    { name: t("nav.booking"), url: "https://remielectric.rs/zakazivanje" },
+    { name: t("nav.home"), url: pageUrl("/") },
+    { name: t("nav.booking"), url: pageUrl("/zakazivanje") },
   ]);
 
   if (isSubmitted) {
@@ -167,7 +168,7 @@ const Booking = () => {
           "Zakažite besplatan termin za elektro usluge. Brza i jednostavna rezervacija online.",
         )}
         keywords="zakazivanje termina električar, online rezervacija elektro usluge, zakaži termin Novi Sad"
-        canonical="https://remielectric.rs/zakazivanje"
+        canonical={pageUrl("/zakazivanje")}
         structuredData={breadcrumbs}
       />
 

@@ -12,6 +12,7 @@ import ViberButton from "@/components/ViberButton";
 import SEO from "@/components/SEO";
 import { organizationSchema, websiteSchema } from "@/lib/structuredData";
 import { useTranslation } from "react-i18next";
+import { pageUrl } from "@/lib/site";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -29,7 +30,7 @@ const Index = () => {
           "REMIELECTRIC - profesionalne elektro instalacije u Novom Sadu. Kućne i poslovne instalacije, održavanje, LED rasveta. Pozovite za besplatnu procenu!",
         )}
         keywords="električar Novi Sad, elektro instalacije, električne instalacije Novi Sad, električar, REMIELECTRIC, Daniel Crnić, elektro usluge Novi Sad"
-        canonical="https://remielectric.rs"
+        canonical={pageUrl("/")}
         structuredData={structuredData}
       />
 

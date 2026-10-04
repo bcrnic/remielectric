@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { pageUrl } from "@/lib/site";
 
 interface SEOProps {
   title: string;
@@ -16,13 +17,13 @@ const SEO = ({
   description,
   keywords = "električar Novi Sad, elektro instalacije, električne instalacije Novi Sad, električar, REMIELECTRIC, Daniel Crnić",
   canonical,
-  ogImage = "https://remielectric.rs/og-image.jpg",
+  ogImage = pageUrl("/og-image.jpg"),
   ogType = "website",
   noindex = false,
   structuredData,
 }: SEOProps) => {
   const fullTitle = title.includes("REMIELECTRIC") ? title : `${title} - REMIELECTRIC`;
-  const siteUrl = "https://remielectric.rs";
+  const siteUrl = pageUrl("/");
   const canonicalUrl = canonical || siteUrl;
 
   return (

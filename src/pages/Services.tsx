@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { breadcrumbSchema, serviceSchema } from "@/lib/structuredData";
+import { pageUrl } from "@/lib/site";
 
 const serviceIcons = [Home, Building2, Wrench, Lightbulb, Plug, Shield, Zap, Settings];
 
@@ -40,8 +41,8 @@ const Services = () => {
     features: string[];
   }>;
   const breadcrumbs = breadcrumbSchema([
-    { name: "Početna", url: "https://remielectric.rs" },
-    { name: "Usluge", url: "https://remielectric.rs/usluge" },
+    { name: "Početna", url: pageUrl("/") },
+    { name: "Usluge", url: pageUrl("/usluge") },
   ]);
 
   const servicesStructuredData = {
@@ -64,7 +65,7 @@ const Services = () => {
           "Kompletan spektar elektro usluga: kućne instalacije, poslovni objekti, LED rasveta, održavanje. Profesionalno i povoljno.",
         )}
         keywords="elektro usluge Novi Sad, kućne instalacije, LED rasveta, poslovne instalacije, održavanje elektro instalacija"
-        canonical="https://remielectric.rs/usluge"
+        canonical={pageUrl("/usluge")}
         structuredData={servicesStructuredData}
       />
 

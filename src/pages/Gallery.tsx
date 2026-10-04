@@ -8,6 +8,7 @@ import SEO from "@/components/SEO";
 import { breadcrumbSchema } from "@/lib/structuredData";
 import { withBase } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { pageUrl } from "@/lib/site";
 
 // Import gallery images
 const placeholderImage = (label: string) =>
@@ -76,8 +77,8 @@ const Gallery = () => {
   };
 
   const breadcrumbs = breadcrumbSchema([
-    { name: t("nav.home"), url: "https://remielectric.rs" },
-    { name: t("nav.gallery"), url: "https://remielectric.rs/galerija" },
+    { name: t("nav.home"), url: pageUrl("/") },
+    { name: t("nav.gallery"), url: pageUrl("/galerija") },
   ]);
 
   return (
@@ -89,7 +90,7 @@ const Gallery = () => {
           "Pogledajte galeriju naših završenih projekata. Elektro instalacije, LED rasveta, razvodne table i više.",
         )}
         keywords="galerija radova, elektro instalacije galerija, LED rasveta primeri, završeni projekti Novi Sad"
-        canonical="https://remielectric.rs/galerija"
+        canonical={pageUrl("/galerija")}
         structuredData={breadcrumbs}
       />
 
