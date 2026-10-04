@@ -5,10 +5,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { cn, withBase } from "@/lib/utils";
 
+// `position` keeps each image's subject clear of the headline when the image is cropped
 const slideImages = [
-  withBase("/images/pro_electrician.jpg"),
-  withBase("/images/distribution_panel.jpg"),
-  withBase("/images/smart_home.jpg"),
+  { src: withBase("/images/pro_electrician.jpg"), position: "object-center" },
+  { src: withBase("/images/distribution_panel.jpg"), position: "object-center" },
+  { src: withBase("/images/smart_home.jpg"), position: "object-right" },
 ];
 
 const AUTOPLAY_MS = 7000;
@@ -44,7 +45,7 @@ const HeroSection = () => {
       onBlur={() => setPaused(false)}
     >
       {/* Background images */}
-      {slideImages.map((src, index) => (
+      {slideImages.map(({ src, position }, index) => (
         <img
           key={src}
           src={src}
@@ -53,6 +54,7 @@ const HeroSection = () => {
           loading={index === 0 ? "eager" : "lazy"}
           className={cn(
             "absolute inset-0 w-full h-full object-cover transition-opacity duration-1000",
+            position,
             index === active ? "opacity-100" : "opacity-0",
           )}
         />
